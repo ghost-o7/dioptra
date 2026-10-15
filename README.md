@@ -10,7 +10,7 @@ Läuft ohne Installation und ohne Netz.**
 Spendenfinanzierte Freeware, kostenlos für private und gewerbliche Nutzung ohne Limits.
 
 [![Ko-fi](https://img.shields.io/badge/Unterst%C3%BCtzen%20auf-Ko--fi-ff5e5b?logo=kofi&logoColor=white)](https://ko-fi.com/ghost_o7)
-[![Release](https://img.shields.io/badge/Release-v0.1.3-00bfff)](CHANGELOG.md)
+[![Release](https://img.shields.io/badge/Release-v0.2.0-00bfff)](CHANGELOG.md)
 [![Lizenz](https://img.shields.io/badge/Lizenz-Freeware-6eb7da)](LICENSE)
 
 </div>
@@ -22,7 +22,7 @@ Spendenfinanzierte Freeware, kostenlos für private und gewerbliche Nutzung ohne
 Es braucht immer dieselben Rechnungen: Werte auf einen anderen Hornhautscheitelabstand umrechnen, Prismen
 zusammenfassen und verteilen, Zylinder transponieren, prüfen, welcher Glasdurchmesser passt, und die Frage, was die Brille
 mit dieser Ausstattung kostet und was die Kasse übernimmt. Im Hybridladen kommen Hörkunden dazu. Dioptra packt das in eine
-Web-App, die wie eine normale App auf dem Home-Bildschirm liegt, ganz ohne App Store.
+App, die auf dem Telefon, dem Tablet und dem Rechner läuft und keine Verbindung braucht.
 
 ## Was es kann
 
@@ -40,33 +40,45 @@ Web-App, die wie eine normale App auf dem Home-Bildschirm liegt, ganz ohne App S
   Eigenschaften, Bestellnummer und Notizen je Glas. Suche, Filter, Bearbeiten, eigene Einträge, JSON-Sicherung,
   CSV-Einlesen der Preisliste aus dem Geschäft.
 - **Ergebnis kopieren.** Jeder Rechner liefert seinen Text per Knopf in der Kopfzeile für das Verwaltungsprogramm.
-- **Dunkel und hell, iPhone und iPad.** Folgt dem System oder fester Wahl, zwei Spalten auf dem iPad.
+- **Dunkel und hell, Telefon, Tablet und Rechner.** Folgt dem System oder fester Wahl, zwei Spalten ab Tablet-Breite.
 
 <div align="center">
 <img src="docs/img/start-dark.png" width="230" alt="Startseite"> <img src="docs/img/keypad-dark.png" width="230" alt="Tastenfeld"> <img src="docs/img/preis-light.png" width="230" alt="Preisrechner">
 </div>
 
-## Einrichtung
+## Herunterladen und installieren
 
-Die App liegt unter **https://ghost-o7.github.io/dioptra/**.
-Für den Home-Bildschirm und den Offline-Betrieb muss sie einmal mit Netz geladen werden:
+| Gerät | Weg |
+| --- | --- |
+| **iPhone, iPad** | https://ghost-o7.github.io/dioptra/ in Safari öffnen, Teilen-Knopf, „Zum Home-Bildschirm", „Hinzufügen". Beim ersten Start einmal mit Netz, danach läuft Dioptra ohne Netz. Neue Versionen meldet die App beim nächsten Start mit Netz selbst. |
+| **Android** | `dioptra-<version>-android.apk` aus den [Releases](../../releases) laden, Installation aus dieser Quelle erlauben, installieren. |
+| **Windows** | `Dioptra_<version>_x64-setup.exe` (Setup für den Benutzer, keine Adminrechte) oder `.msi` aus den [Releases](../../releases). |
+| **Linux** | `.deb` (Debian, Ubuntu) oder `.AppImage` (überall, ausführbar machen und starten) aus den [Releases](../../releases). |
+| **Jeder Browser** | https://ghost-o7.github.io/dioptra/ direkt öffnen. `dist/dioptra.html` enthält alles in einer Datei. |
 
-1. Adresse in Safari öffnen.
-2. Teilen-Knopf, „Zum Home-Bildschirm", „Hinzufügen".
-3. Flugmodus einschalten, App vom Home-Bildschirm starten. Läuft sie, ist die Einrichtung fertig.
+Alles bleibt auf dem Gerät, keine Konten, keine Server, keine Kundendaten. Sicherungen der Datenbanken landen als
+JSON-Datei in „Dateien" (iPhone), im Teilen-Menü (Android) oder über den Speichern-Dialog (Windows, Linux).
 
-Danach braucht die App kein Netz mehr. Gibt es mit Netz eine neue Version, meldet sich die App mit „Aktualisiert" und
-lädt neu. 
+Apple Watch: Für die Rechner gibt es Bauanleitungen als Kurzbefehle, die auch auf der Watch laufen:
+[docs/KURZBEFEHL.md](docs/KURZBEFEHL.md).
 
-`dist/dioptra.html` enthält alles in einer Datei für Mac, PC oder Android; auf dem iPhone läuft nur der Weg über Safari zuverlässig.
+## Repository
 
-Apple Watch: watchOS kennt keine Web-Apps. Für einige Rechner gibt es eine Bauanleitung als Kurzbefehl, der auch auf
-der Watch läuft: [docs/KURZBEFEHL.md](docs/KURZBEFEHL.md).
+| Ordner | Inhalt |
+| --- | --- |
+| `app/` | Die App: Seite, Styles, Tastenfeld, Rechenkern, Startbestände, Datenbank, Ansichten, Service Worker, Icons |
+| `dist/` | Einzeldatei `dioptra.html`, gebaut mit `node tools/build-single.js` |
+| `src-tauri/` | Desktop-Hülle (Tauri) für Windows und Linux |
+| `capacitor.config.json`, `resources/` | Android-Hülle (Capacitor), das Projekt entsteht beim Release-Lauf |
+| `tools/` | `check-refs.js` (zeichnet alle Ansichten zur Prüfung), `build-single.js` (Einzeldatei) |
+| `docs/` | [HANDBUCH.md](docs/HANDBUCH.md), [KURZBEFEHL.md](docs/KURZBEFEHL.md), Bilder |
 
+`.github/workflows/ci.yml` prüft bei jedem Push, `pages.yml` veröffentlicht `app/` auf GitHub Pages, `release.yml` baut bei
+einem Tag `v<version>` die Pakete für Windows, Linux und Android als Entwurfs-Release.
 
 ## Status
 
-Version 0.1.3, siehe [CHANGELOG.md](CHANGELOG.md). Preise und Eigenschaften der KIND-Gläser und -Hörgeräte stammen von
+Version 0.2.0, siehe [CHANGELOG.md](CHANGELOG.md). Preise und Eigenschaften der KIND-Gläser und -Hörgeräte stammen von
 kind.com, Stand 14. Oktober 2026. Festbeträge Sehhilfen nach der Bekanntmachung 2021 (seit März 2025 über
 Versorgungsverträge in praktisch gleicher Höhe), Hörgeräte-Festbetrag GKV 2026. Herstellerbestellnummern sind nicht
 öffentlich und werden im Geschäft nachgetragen. Alle Angaben ohne Gewähr.

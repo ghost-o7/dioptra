@@ -1,13 +1,30 @@
 # Dioptra - Handbuch (Bedienung)
 
-Stand: v0.1.3. Web-App für iPhone und iPad (Safari), läuft auch in jedem anderen Browser.
+Stand: v0.2.0. Web-App für iPhone und iPad (Safari), läuft auch in jedem anderen Browser.
 
 ## 1. Installation und Start
 
-| Weg | Was passiert |
+| Gerät | Was passiert |
 | --- | --- |
-| GitHub Pages | https://ghost-o7.github.io/dioptra/ in Safari öffnen, Teilen, „Zum Home-Bildschirm". Beim ersten Start lädt der Service Worker alle Dateien, danach läuft die App ohne Netz. Eine neue Version wird beim nächsten Start mit Netz geholt, die App meldet „Aktualisiert" und lädt neu. |
-| Einzeldatei | `dist/dioptra.html` für Mac, PC oder Android. Auf dem iPhone läuft JavaScript aus der Dateien-App nicht zuverlässig. |
+| iPhone, iPad | https://ghost-o7.github.io/dioptra/ in Safari öffnen, Teilen, „Zum Home-Bildschirm". Beim ersten Start werden alle Dateien geladen, danach läuft die App ohne Netz. Eine neue Version wird beim nächsten Start mit Netz geholt, die App meldet „Aktualisiert" und lädt neu. |
+| Android | APK aus den Releases laden, Installation aus dieser Quelle erlauben, installieren. Updates durch Installieren der neuen APK über die alte (gleiche Signatur vorausgesetzt). Zurück-Taste führt in der App zurück. |
+| Windows | Setup `.exe` (installiert für den Benutzer, keine Adminrechte) oder `.msi` für die Softwareverteilung. Programm unter Start, Dioptra. |
+| Linux | `.deb` mit `sudo apt install ./Dioptra_<version>_amd64.deb` oder `.AppImage` ausführbar machen und starten. |
+| Browser | Adresse direkt öffnen; `dist/dioptra.html` läuft auch als lokale Datei auf Mac, PC und Android. |
+
+Sicherungen: iPhone legt die JSON-Datei in „Dateien" ab, Android öffnet das Teilen-Menü (zum Beispiel in Drive oder
+Dateien speichern), Windows und Linux fragen über einen Speichern-Dialog nach dem Ort.
+
+Release bauen (Herausgeber): Tag `v<version>` setzen und pushen, der Workflow „Release" baut Windows, Linux und Android
+als Entwurfs-Release. Für gleichbleibende Android-Signaturen einmal einen Schlüssel erzeugen und als Secrets hinterlegen:
+
+```
+keytool -genkeypair -keystore dioptra.keystore -alias dioptra -keyalg RSA -keysize 2048 -validity 10000
+base64 -w0 dioptra.keystore   # Inhalt als Secret ANDROID_KEYSTORE_B64
+```
+
+Dazu `ANDROID_KEYSTORE_PASSWORD` und `ANDROID_KEY_ALIAS` (dioptra). Ohne diese Secrets signiert jeder Lauf mit einem
+neuen Schlüssel; dann muss die alte App vor dem Update deinstalliert werden.
 
 | Daten | Ort |
 | --- | --- |

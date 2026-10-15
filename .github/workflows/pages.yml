@@ -25,8 +25,10 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
+          cache: npm
+      - run: npm ci
       - name: Render-Prüfung vor der Veroeffentlichung
-        run: npm install --no-save --silent jsdom@25.0.1 && node tools/check-refs.js
+        run: node tools/check-refs.js
       - name: Build-Kennung in den Service Worker schreiben
         run: sed -i 's/const BUILD = "dev";/const BUILD = "${{ github.sha }}";/' app/sw.js && grep -c 'const BUILD = "${{ github.sha }}"' app/sw.js
       - uses: actions/configure-pages@v5

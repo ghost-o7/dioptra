@@ -5,8 +5,18 @@ Versionierung: SemVer (Datei `VERSION`, `APP_VERSION` in `app/app.js`, `VERSION`
 
 ## [Unreleased]
 
+## [0.2.0] - 2026-10-15
+
+### Neu
+- Installationspakete für Windows (Setup, MSI), Linux (deb, AppImage) und Android (APK), gebaut vom Workflow „Release"
+  bei einem Tag. Die Web-App bleibt der Weg für iPhone und iPad.
+- Sicherungen in den Hüllen nativ: Speichern-Dialog unter Windows und Linux, Teilen-Menü unter Android.
+- Android: Zurück-Taste führt in der App zurück.
+- Unter Mehr steht die Ausgabe (Web-App, Desktop, Android).
+
 ### Behoben
-- Nach einem Update konnte die App mit neuem Service Worker, aber alten Dateien laufen (CDN-Zwischenspeicher von GitHub Pages). Die Installation holt jede Datei jetzt mit Frischestempel.
+- Nach einem Update konnte die App mit neuem Service Worker, aber alten Dateien laufen (CDN-Zwischenspeicher). Die
+  Installation holt jede Datei jetzt mit Frischestempel.
 
 ## [0.1.3] - 2026-10-15
 

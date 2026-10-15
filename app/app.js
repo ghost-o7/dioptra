@@ -1,7 +1,7 @@
 "use strict";
 // Dioptra - Rahmen: Startseite mit Kacheln, Reiter, Navigation ohne Browser-Historie (Wischgeste tut nichts),
 // Kopfzeile mit Zurück und Kopieren, Ansicht „Mehr", Service Worker.
-const APP_VERSION = "0.1.3";
+const APP_VERSION = "0.2.0";
 const GROUPS = [
   { id: "refraktion", title: "Refraktion" }, { id: "fassung", title: "Fassung und Glas" }, { id: "preis", title: "Preise und Kasse" }, { id: "hoer", title: "Hörakustik", optional: true }
 ];
@@ -57,7 +57,7 @@ Views.mehr = {
     function backupCard(title, col, fileBase) {
       col.load();
       const file = el("input", { type: "file", accept: ".json,.csv,text/csv,application/json", class: "skip" });
-      const exp = el("button.btn.ghost", { type: "button", text: "Sichern (JSON)", on: { click: () => { downloadText(fileBase + "-" + new Date().toISOString().slice(0, 10) + ".json", col.exportJson()); toast("Sicherung erstellt."); } } });
+      const exp = el("button.btn.ghost", { type: "button", text: "Sichern (JSON)", on: { click: async () => { if (await downloadText(fileBase + "-" + new Date().toISOString().slice(0, 10) + ".json", col.exportJson())) toast(Platform.capacitor ? "Sicherung zum Teilen bereit." : "Sicherung erstellt."); } } });
       const imp = el("button.btn.ghost", { type: "button", text: "Einlesen (JSON oder CSV)", on: { click: () => file.click() } });
       file.addEventListener("change", async () => {
         const f = file.files && file.files[0]; if (!f) return;
@@ -85,10 +85,12 @@ Views.mehr = {
       backupCard("Gläserdatenbank", DB.glaeser, "dioptra-glaeser"), backupCard("Hörgeräte", DB.hoer, "dioptra-hoergeraete"),
       section("Rechner", clearCalc),
       section("CSV-Einlesen", note("Kopfzeile mit Spaltennamen: name, hersteller, typ, stufe, preis, index, bestellnr, verfuegbar, lieferbereich, eigenschaften (mit | getrennt), hinweis, notizen, bauform. Trenner Semikolon, Komma oder Tab. Gleicher Name aktualisiert den Eintrag; bei Namen, die es mehrfach gibt (KIND Premium), die Spalte typ mitgeben.")),
-      section("Installation auf dem iPhone", el("ul.plain", el("li", { text: "https://ghost-o7.github.io/dioptra/ in Safari öffnen, Teilen, „Zum Home-Bildschirm“. Danach läuft die App ohne Netz." }), el("li", { text: "Alles bleibt auf dem Gerät. Keine Konten, keine Server, keine Kundendaten." }), el("li", { text: "Sicherungen landen als Datei in „Dateien“." }))),
-      section("Unterstützen", note("Dioptra ist Freeware und bleibt kostenlos. Wer die Arbeit daran unterstützen möchte, kann das freiwillig über Ko-fi tun."),
-        el("a.btn.ghost.kofi", { href: "https://ko-fi.com/ghost_o7", target: "_blank", rel: "noopener", text: "☕ Auf Ko-fi unterstützen" }), note("ko-fi.com/ghost_o7")),
+      Platform.name === "web" ? section("Als App auf dem Gerät", el("ul.plain",
+        el("li", { text: "iPhone und iPad: https://ghost-o7.github.io/dioptra/ in Safari öffnen, Teilen-Knopf, „Zum Home-Bildschirm“. Danach läuft Dioptra ohne Netz." }),
+        el("li", { text: "Windows, Linux und Android: Installationspakete unter github.com/ghost-o7/dioptra/releases." }),
+        el("li", { text: "Alles bleibt auf dem Gerät. Keine Konten, keine Server, keine Kundendaten. Sicherungen landen als Datei in „Dateien“." }))) : null,
       section("Über", el("dl.kv", el("dt", { text: "Version" }), el("dd", { text: APP_VERSION }),
+        el("dt", { text: "Ausgabe" }), el("dd", { text: Platform.name === "desktop" ? "Desktop (Windows, Linux)" : (Platform.name === "android" ? "Android" : "Web-App") }),
         el("dt", { text: "Projekt" }), el("dd", { text: "github.com/ghost-o7/dioptra, Freeware. Unabhängiges Werkzeug, keine Verbindung zu KIND oder Konradin; Produktnamen nur zur Beschreibung des Sortiments." }), el("dt", { text: "Rechner" }), el("dd", { text: "HSA und Prismen nach den Rechnern von DER AUGENOPTIKER (Konradin), gegen deren Referenzwerte geprüft. Übrige Rechner nach Lehrbuch." }),
         el("dt", { text: "Daten" }), el("dd", { text: "KIND-Sortiment nach kind.com (Oktober 2026), Festbeträge Sehhilfen nach Bekanntmachung 2021, Hörgeräte-Festbetrag GKV 2026." }), el("dt", { text: "Hinweis" }), el("dd", { text: "Alle Angaben ohne Gewähr. Bestellwerte und Abrechnung hängen vom Einzelfall ab." }))));
   }
@@ -135,9 +137,22 @@ const App = {
     const last = Store.get("dioptra.lastView", "start");
     this.show(Object.hasOwn(Views, h) ? h : (Object.hasOwn(Views, last) ? last : "start"));
     this.sw();
+    this.android();
+  },
+  // Android-Hülle: Zurück-Taste geht in der App zurück, auf der Startseite beendet sie die App.
+  android() {
+    if (!Platform.capacitor) return;
+    try {
+      const CapApp = window.Capacitor.registerPlugin("App");
+      CapApp.addListener("backButton", () => {
+        if (!Keypad.root.hidden) Keypad.close();
+        else if (this.subBack || this.current !== "start") this.goBack();
+        else CapApp.exitApp();
+      });
+    } catch (e) { /* ohne Plugin weiter */ }
   },
   sw() {
-    if (!("serviceWorker" in navigator) || !/^https?:$/.test(location.protocol)) return;
+    if (!("serviceWorker" in navigator) || !/^https?:$/.test(location.protocol) || Platform.name !== "web") return;
     const hadController = !!navigator.serviceWorker.controller; let reloaded = false;
     navigator.serviceWorker.addEventListener("controllerchange", () => { if (reloaded || !hadController) return; reloaded = true; toast("Aktualisiert. Neue Version wird geladen."); setTimeout(() => location.reload(), 900); });
     navigator.serviceWorker.register("sw.js").catch(() => { /* ohne Offline-Cache weiter */ });

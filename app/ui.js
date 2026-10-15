@@ -138,10 +138,34 @@ function toggleRow(label, checked, onChange, sub) {
   lab.input = input;
   return lab;
 }
-function downloadText(name, text, mime) {
+// Laufzeitumgebung: Browser oder Web-App, Desktop-Hülle (Tauri) oder Android-Hülle (Capacitor).
+const Platform = {
+  get tauri() { return !!(window.__TAURI__ && window.__TAURI__.dialog); },
+  get capacitor() { return !!(window.Capacitor && window.Capacitor.isNativePlatform && window.Capacitor.isNativePlatform()); },
+  get name() { return this.tauri ? "desktop" : (this.capacitor ? "android" : "web"); }
+};
+// Textdatei sichern: Desktop über Speichern-Dialog, Android über das Teilen-Menü, sonst als Download.
+async function downloadText(name, text, mime) {
+  if (Platform.tauri) {
+    try {
+      const path = await window.__TAURI__.dialog.save({ defaultPath: name, filters: [{ name: "JSON", extensions: ["json"] }] });
+      if (!path) return false;
+      await window.__TAURI__.fs.writeTextFile(path, text);
+      return true;
+    } catch (e) { toast("Speichern nicht möglich: " + e.message, "err"); return false; }
+  }
+  if (Platform.capacitor) {
+    try {
+      const Filesystem = window.Capacitor.registerPlugin("Filesystem"), Share = window.Capacitor.registerPlugin("Share");
+      const w = await Filesystem.writeFile({ path: name, data: text, directory: "CACHE", encoding: "utf8" });
+      await Share.share({ title: name, files: [w.uri] });
+      return true;
+    } catch (e) { if (!/cancel/i.test(String(e && e.message))) toast("Teilen nicht möglich: " + (e && e.message), "err"); return false; }
+  }
   const blob = new Blob([text], { type: mime || "application/json" });
   const url = URL.createObjectURL(blob);
   const a = el("a", { href: url, download: name });
   document.body.append(a); a.click(); a.remove();
   setTimeout(() => URL.revokeObjectURL(url), 2000);
+  return true;
 }

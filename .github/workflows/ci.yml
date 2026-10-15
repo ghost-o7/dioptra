@@ -15,7 +15,9 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
+          cache: npm
+      - run: npm ci
       - name: Render-Prüfung aller Ansichten (jsdom)
-        run: npm install --no-save --silent jsdom@25.0.1 && node tools/check-refs.js
+        run: node tools/check-refs.js
       - name: Einzeldatei bauen
         run: node tools/build-single.js

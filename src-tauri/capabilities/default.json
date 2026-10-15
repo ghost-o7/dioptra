@@ -1,0 +1,13 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "default",
+  "description": "Hauptfenster: Dateidialoge und Schreiben an den im Dialog gewählten Ort, Links im Browser öffnen.",
+  "windows": ["main"],
+  "permissions": [
+    "core:default",
+    "dialog:default",
+    "fs:default",
+    "fs:allow-write-text-file",
+    "opener:default"
+  ]
+}

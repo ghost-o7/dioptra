@@ -1,7 +1,7 @@
 "use strict";
 // Dioptra - Service Worker: alle Dateien der App beim Installieren laden, danach aus dem Cache liefern.
 // Der Cache-Name trägt die Version. Eine neue Version räumt alte Caches weg und übernimmt sofort.
-const VERSION = "0.1.3";
+const VERSION = "0.2.0";
 const BUILD = "dev"; // wird beim Veröffentlichen durch den Commit ersetzt
 const CACHE = "dioptra-" + VERSION + "-" + BUILD;
 const FILES = ["./", "./index.html", "./styles.css", "./theme.js", "./ui.js", "./core.js", "./data-kind.js",
