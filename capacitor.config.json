@@ -1,0 +1,12 @@
+{
+  "appId": "org.ghostdev.dioptra",
+  "appName": "Dioptra",
+  "webDir": "app",
+  "android": {
+    "allowMixedContent": false,
+    "backgroundColor": "#101018"
+  },
+  "server": {
+    "androidScheme": "https"
+  }
+}
