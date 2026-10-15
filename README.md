@@ -63,14 +63,6 @@ lädt neu.
 Apple Watch: watchOS kennt keine Web-Apps. Für einige Rechner gibt es eine Bauanleitung als Kurzbefehl, der auch auf
 der Watch läuft: [docs/KURZBEFEHL.md](docs/KURZBEFEHL.md).
 
-## Repository
-
-| Ordner | Inhalt |
-| --- | --- |
-| `app/` | Die App: `index.html`, `styles.css`, `theme.js`, `ui.js`, `keypad.js` (Tastenfeld), `core.js` (Rechenkern), `data-kind.js` und `data-extra.js` (Startbestände), `db.js`, `views-*.js`, `app.js`, `sw.js`, `manifest.webmanifest`, `icons/` |
-| `dist/` | Einzeldatei `dioptra.html`, gebaut mit `node tools/build-single.js` |
-| `tools/` | `check-refs.js` (zeichnet alle Ansichten zur Prüfung), `build-single.js` (Einzeldatei) |
-| `docs/` | [HANDBUCH.md](docs/HANDBUCH.md), [KURZBEFEHL.md](docs/KURZBEFEHL.md), Bilder |
 
 ## Status
 
