@@ -1,5 +1,5 @@
 # Release bauen: Windows (Setup .exe, .msi) und Linux (.deb, .AppImage) mit Tauri, Android (.apk) mit Capacitor.
-# Ausgeloest durch einen Tag v<version> oder von Hand. Das Release entsteht als Entwurf, der Herausgeber prueft und
+# Ausgeloest durch einen Tag v<version> oder von Hand mit Angabe des Tags; der Tag entsteht dann beim Veroeffentlichen des Releases. Das Release entsteht als Entwurf, der Herausgeber prueft und
 # veroeffentlicht es. Fuer stabile Android-Signaturen die Secrets ANDROID_KEYSTORE_B64, ANDROID_KEYSTORE_PASSWORD und
 # ANDROID_KEY_ALIAS anlegen (siehe docs/HANDBUCH.md); ohne sie wird je Lauf ein neuer Schluessel erzeugt.
 name: Release
@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
     inputs:
       tag:
-        description: Tag wie v0.2.0 (muss existieren)
+        description: Tag wie v0.2.0 (wird mit dem Release angelegt, falls er fehlt)
         required: true
 permissions:
   contents: write
@@ -28,8 +28,6 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
-        with:
-          ref: ${{ env.TAG }}
       - uses: actions/setup-node@v4
         with:
           node-version: 22
@@ -61,8 +59,6 @@ jobs:
     needs: desktop
     steps:
       - uses: actions/checkout@v4
-        with:
-          ref: ${{ env.TAG }}
       - uses: actions/setup-node@v4
         with:
           node-version: 22
