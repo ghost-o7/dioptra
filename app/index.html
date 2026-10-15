@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="dark light">
+  <meta name="theme-color" content="#101018" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f3f3f7" media="(prefers-color-scheme: light)">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Dioptra">
+  <meta name="description" content="Dioptra: Rechner, Preiskalkulation und Gläserdatenbank für die Augenoptik, dazu Hörakustik. Läuft offline auf dem iPhone.">
+  <title>Dioptra</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="icons/icon-180.png">
+  <link rel="stylesheet" href="styles.css">
+  <script src="theme.js"></script>
+</head>
+<body>
+  <div class="app">
+    <header class="top">
+      <div class="top-row">
+        <button type="button" id="back" class="icon-btn placeholder" aria-label="Zurück">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>
+        </button>
+        <h1 id="title">Dioptra</h1>
+        <button type="button" id="action" class="icon-btn placeholder" aria-label="Kopieren">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h8"/></svg>
+        </button>
+      </div>
+    </header>
+    <main id="main" tabindex="-1"></main>
+    <nav id="tabs" class="tabs" aria-label="Bereiche">
+      <button type="button" class="tab" data-tab="start" aria-selected="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></svg>
+        Start
+      </button>
+      <button type="button" class="tab" data-tab="glaeser" aria-selected="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="7" cy="14" r="4"/><circle cx="17" cy="14" r="4"/><path d="M11 13.5c.5-1 1.5-1 2 0M3 13l1.5-5h2M21 13l-1.5-5h-2"/></svg>
+        Gläser
+      </button>
+      <button type="button" class="tab" data-tab="preis" aria-selected="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M16 5H10a3.5 3.5 0 0 0 0 7h4a3.5 3.5 0 0 1 0 7H7"/><path d="M12 3v18"/></svg>
+        Preis
+      </button>
+      <button type="button" class="tab" data-tab="mehr" aria-selected="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="5" cy="12" r="1.5"/><circle cx="12" cy="12" r="1.5"/><circle cx="19" cy="12" r="1.5"/></svg>
+        Mehr
+      </button>
+    </nav>
+  </div>
+  <div id="keypad" hidden></div>
+  <div id="toast-root" aria-live="polite"></div>
+  <div id="modal-root"></div>
+  <script src="ui.js"></script>
+  <script src="core.js"></script>
+  <script src="keypad.js"></script>
+  <script src="data-kind.js"></script>
+  <script src="data-extra.js"></script>
+  <script src="db.js"></script>
+  <script src="views-rx.js"></script>
+  <script src="views-fit.js"></script>
+  <script src="views-extra.js"></script>
+  <script src="views-preis.js"></script>
+  <script src="views-hoer.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

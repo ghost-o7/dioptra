@@ -1,0 +1,1763 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="dark light">
+  <meta name="theme-color" content="#101018" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f3f3f7" media="(prefers-color-scheme: light)">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Dioptra">
+  <meta name="description" content="Dioptra: Rechner, Preiskalkulation und Gläserdatenbank für die Augenoptik, dazu Hörakustik. Läuft offline auf dem iPhone.">
+  <title>Dioptra</title>
+    <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAA9zQYyAAAGOElEQVR4nO3dPVbcShCG4RrOXQChc+KbeVkOYRUQelnOHJMTzg7sgCMzCM2of9VVX79P6GNDS/1S02I4+GQO3N9/+zN6Dah3Pr+dRq9hyAIIeA4jAj/sExLx3I6Ku+snIWJs6Rl3lw9MyEjRI+y71h+QmJGqRyvNvkIIGTVaTesmE5qYUatVQ1VfFYSMHmqmdfGEJmb0UtNWUdDEjN5KG8sOmphxlJLWsoImZhwtt7nkoIkZo+S0lxQ0MWO01AZ3gyZmeJHSYvO3voGRbgbNdIY3e01eDZqY4dWtNjlyQMpm0ExneHet0S9BEzOi2GqVIwekfAqa6Yxo1s0yoSGFoCHlX9AcNxDVZbtMaEghaEi5M+O4gfiWhpnQkELQkELQkHLi/AwlTGhIIWhI+W/0ApQ8P74W/9unl4eGK5kXZ+hCNfGmIvJ8BJ3oiID3EPg+gr7BQ8TXEPc2gt7gOeQ1wv6MoC9ECnmNsN8RtMUOeW32sKcOWinktVnDnjJo5ZDXZgt7uqB7x7wV0Ppzrv/OiDWpmuqdwtbhtAol5YugxvPj6zRRTxF0yziOCuPy87RY//Ix1MOWD7pFDKMjaBm3+rSW/mm72s1/enlwt/kt1qT8UCwbdO1PvnkLea12japRSwZdulkRQl6rWbNi1HJBl2xSxJDXSq9BLWqpoEtjVjJ71DJBE/OHmaOWCDp3MxSOGHtKrlEh6vBBl8Q8k9miDh00MaeZKerQQeeYNebFLNcfNuicKTLLZu7JuQ9Rp3TIoIm5nHrU4YIm5nrKUYcLGrglVNBM53ZUp3SooFMRcxrF+xQm6NQpobhJPaXeryhTOkzQQIoQQTOd+1Ka0iGCBlK5D5rpfAyVKe0+aCCH66CZzsdSmNKugwZyhQ+a6dxW9PvpNmjPL2vwuz9ugwZKhA46+sujV5Hva+iggTWXQXs9n+Ezj/sU9tfpRnpZjLTWxdPLg8tg97ic0EApgoYUgoYUd0FHPLfNzNt+hXwojPSQ9f+vH1/+7Pf3nwNWki/ig6G7Ca1kK+Zbf456BN3JXrRE3QdBd5AaK1G3R9CN5UZK1G2FfCj08qDS8+HUyzVGw4SGFIKGFIKGlJBnaM9vrPz+/jPrQe/amyxerjHaWZ4J3UHqO4FR3jGMhKA72YuVmPsg6I6uRUvM/YQ8Qz8/vro5Y+6JHG+087OZwwkdJVS887Zf7oIGahA0pBA0pIR8KDSL9WC4friKsO6ID4RmTid0hA2Hz31yGTRQKnTQUV8WvYt8X0MHDay5Ddrj+QwfvO6P26BTRX559Cj6/QwfNHDJddAK/81YJAr/jZ7roIFc7oNmSh9DYTqbBQgayBEiaKZ0XyrT2SxI0ECqMEEzpftQms5mgYLOQdRpFO9TqKBzpoTiZrWUc3+iTGezYEEDe8IFzZSupzqdzQIGbUbUNZRjNgsatBlRl1CP2Sxw0Llmj3qW6w8ddO4UmWVT13KvO+p0NgsetBlR75kpZjOBoM3KolYPu+Qao8dsJhK0WdlmqEZdcl0KMZsJBW1G1GZzx2wmFrRZedTRwy69BqWYzQSDNivfpIhh16xZLWYz0aDN6jYrQti1a1SM2Uw4aLP6TfMYdos1qcZsFvjX6aZ6enmoDuDy34+IoeUXlXLMZhMEbfaxiS3COCru1q8M6iEvpgh60WJaX9r6WB6/dThLzGZmp/v7b39GL+Jo3s7FPc0Us9mkQS+Uw54t5MXUQS+Uwp415AVBX4gc9uwhLwh6Q6SwCfkzgr7Bc9iEvI2gE3mIm4j3EXShIwIn4HwE3RA/LDQeQUOK9E/bYT535/PbafQigBbO57cTExpSCBpSCBpS7szezx6jFwLUWBpmQkMKQUPKv6A5diCqy3aZ0JBC0JDyKWiOHYhm3SwTGlK+BM2URhRbrW5OaKKGd9ca5cgBKVeDZkrDq1tt3pzQRA1v9prkyAEpu0EzpeFFSotJE5qoMVpqg8lHDqLGKDntZZ2hiRpHy20u+6GQqHGUktaKvstB1OittLHib9sRNXqpaatJlPw6MbTQYkg2eWOFaY1arRpqHiLTGjlaD8Pmb30zrZGqRytd42NaY0vPoXfYNCXuuR31yj3keEDccxhx/HRx3iVwDR6en/4CheOZgkC3AnUAAAAASUVORK5CYII=">
+  <link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAA9zQYyAAAGOElEQVR4nO3dPVbcShCG4RrOXQChc+KbeVkOYRUQelnOHJMTzg7sgCMzCM2of9VVX79P6GNDS/1S02I4+GQO3N9/+zN6Dah3Pr+dRq9hyAIIeA4jAj/sExLx3I6Ku+snIWJs6Rl3lw9MyEjRI+y71h+QmJGqRyvNvkIIGTVaTesmE5qYUatVQ1VfFYSMHmqmdfGEJmb0UtNWUdDEjN5KG8sOmphxlJLWsoImZhwtt7nkoIkZo+S0lxQ0MWO01AZ3gyZmeJHSYvO3voGRbgbNdIY3e01eDZqY4dWtNjlyQMpm0ExneHet0S9BEzOi2GqVIwekfAqa6Yxo1s0yoSGFoCHlX9AcNxDVZbtMaEghaEi5M+O4gfiWhpnQkELQkELQkHLi/AwlTGhIIWhI+W/0ApQ8P74W/9unl4eGK5kXZ+hCNfGmIvJ8BJ3oiID3EPg+gr7BQ8TXEPc2gt7gOeQ1wv6MoC9ECnmNsN8RtMUOeW32sKcOWinktVnDnjJo5ZDXZgt7uqB7x7wV0Ppzrv/OiDWpmuqdwtbhtAol5YugxvPj6zRRTxF0yziOCuPy87RY//Ix1MOWD7pFDKMjaBm3+rSW/mm72s1/enlwt/kt1qT8UCwbdO1PvnkLea12japRSwZdulkRQl6rWbNi1HJBl2xSxJDXSq9BLWqpoEtjVjJ71DJBE/OHmaOWCDp3MxSOGHtKrlEh6vBBl8Q8k9miDh00MaeZKerQQeeYNebFLNcfNuicKTLLZu7JuQ9Rp3TIoIm5nHrU4YIm5nrKUYcLGrglVNBM53ZUp3SooFMRcxrF+xQm6NQpobhJPaXeryhTOkzQQIoQQTOd+1Ka0iGCBlK5D5rpfAyVKe0+aCCH66CZzsdSmNKugwZyhQ+a6dxW9PvpNmjPL2vwuz9ugwZKhA46+sujV5Hva+iggTWXQXs9n+Ezj/sU9tfpRnpZjLTWxdPLg8tg97ic0EApgoYUgoYUd0FHPLfNzNt+hXwojPSQ9f+vH1/+7Pf3nwNWki/ig6G7Ca1kK+Zbf456BN3JXrRE3QdBd5AaK1G3R9CN5UZK1G2FfCj08qDS8+HUyzVGw4SGFIKGFIKGlJBnaM9vrPz+/jPrQe/amyxerjHaWZ4J3UHqO4FR3jGMhKA72YuVmPsg6I6uRUvM/YQ8Qz8/vro5Y+6JHG+087OZwwkdJVS887Zf7oIGahA0pBA0pIR8KDSL9WC4friKsO6ID4RmTid0hA2Hz31yGTRQKnTQUV8WvYt8X0MHDay5Ddrj+QwfvO6P26BTRX559Cj6/QwfNHDJddAK/81YJAr/jZ7roIFc7oNmSh9DYTqbBQgayBEiaKZ0XyrT2SxI0ECqMEEzpftQms5mgYLOQdRpFO9TqKBzpoTiZrWUc3+iTGezYEEDe8IFzZSupzqdzQIGbUbUNZRjNgsatBlRl1CP2Sxw0Llmj3qW6w8ddO4UmWVT13KvO+p0NgsetBlR75kpZjOBoM3KolYPu+Qao8dsJhK0WdlmqEZdcl0KMZsJBW1G1GZzx2wmFrRZedTRwy69BqWYzQSDNivfpIhh16xZLWYz0aDN6jYrQti1a1SM2Uw4aLP6TfMYdos1qcZsFvjX6aZ6enmoDuDy34+IoeUXlXLMZhMEbfaxiS3COCru1q8M6iEvpgh60WJaX9r6WB6/dThLzGZmp/v7b39GL+Jo3s7FPc0Us9mkQS+Uw54t5MXUQS+Uwp415AVBX4gc9uwhLwh6Q6SwCfkzgr7Bc9iEvI2gE3mIm4j3EXShIwIn4HwE3RA/LDQeQUOK9E/bYT535/PbafQigBbO57cTExpSCBpSCBpS7szezx6jFwLUWBpmQkMKQUPKv6A5diCqy3aZ0JBC0JDyKWiOHYhm3SwTGlK+BM2URhRbrW5OaKKGd9ca5cgBKVeDZkrDq1tt3pzQRA1v9prkyAEpu0EzpeFFSotJE5qoMVpqg8lHDqLGKDntZZ2hiRpHy20u+6GQqHGUktaKvstB1OittLHib9sRNXqpaatJlPw6MbTQYkg2eWOFaY1arRpqHiLTGjlaD8Pmb30zrZGqRytd42NaY0vPoXfYNCXuuR31yj3keEDccxhx/HRx3iVwDR6en/4CheOZgkC3AnUAAAAASUVORK5CYII=">
+  <style>
+/* Dioptra - Produktfamilien-Optik (wie Avina /ui). Dunkel ist Standard, hell per System oder Wahl. */
+/* Aufbau: feste Kopfzeile mit Zurück, scrollender Inhalt, Tastenfeld oder Reiter unten. Alles für eine Hand. */
+:root {
+  --bg: #101018; --bg2: #16161f; --card: #1a1a26; --border: #2a2a3a; --hover: #22222f; --field: #12121c;
+  --fg: #dcdce6; --muted: #9a9aaa; --accent: #5a38d6; --accent2: #9b84f5; --on-accent: #fff;
+  --ok: #3ddc84; --warn: #f5b041; --danger: #ff6b5b; --danger-border: #6a2e2e; --overlay: rgba(0,0,0,.6);
+  --r-eye: #9b84f5; --l-eye: #3ddc84; --key: #22222f; --key-strong: #2d2d3d;
+  --radius: 10px; --radius-card: 12px; --tap: 48px;
+  --font: -apple-system, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color-scheme: dark;
+}
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --bg: #f3f3f7; --bg2: #ebebf1; --card: #ffffff; --border: #d6d6e0; --hover: #e9e9f1; --field: #ffffff;
+    --fg: #1c1c28; --muted: #5b5b6e; --accent: #4b2bb8; --accent2: #4b2bb8; --on-accent: #fff;
+    --ok: #1a7f3c; --warn: #8a5300; --danger: #c0392b; --danger-border: #e5b2ab; --overlay: rgba(20,20,40,.45);
+    --r-eye: #4b2bb8; --l-eye: #1a7f3c; --key: #ffffff; --key-strong: #e4e4ec;
+    color-scheme: light;
+  }
+}
+:root[data-theme="light"] {
+  --bg: #f3f3f7; --bg2: #ebebf1; --card: #ffffff; --border: #d6d6e0; --hover: #e9e9f1; --field: #ffffff;
+  --fg: #1c1c28; --muted: #5b5b6e; --accent: #4b2bb8; --accent2: #4b2bb8; --on-accent: #fff;
+  --ok: #1a7f3c; --warn: #8a5300; --danger: #c0392b; --danger-border: #e5b2ab; --overlay: rgba(20,20,40,.45);
+  --r-eye: #4b2bb8; --l-eye: #1a7f3c; --key: #ffffff; --key-strong: #e4e4ec;
+  color-scheme: light;
+}
+
+* { box-sizing: border-box; touch-action: manipulation; }
+[hidden] { display: none !important; }
+html, body { height: 100%; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.45 var(--font);
+  overscroll-behavior: none; -webkit-tap-highlight-color: transparent; -webkit-user-select: none; user-select: none;
+}
+h1, h2, h3 { margin: 0; text-wrap: balance; font-weight: 600; }
+h2 { font-size: 20px; }
+h3 { font-size: 13px; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; }
+p { margin: 0; }
+a { color: var(--accent2); }
+button { font: inherit; color: inherit; cursor: pointer; }
+input, select, textarea { font: inherit; color: var(--fg); -webkit-user-select: text; user-select: text; }
+.res-value, .rx-val, .fld-val, .lens, .kv dd, .sum-total, pre { -webkit-user-select: text; user-select: text; }
+:focus-visible { outline: 2px solid var(--accent2); outline-offset: 2px; }
+.skip { position: absolute; left: -999px; top: 0; }
+
+/* Rahmen */
+.app { height: 100%; display: flex; flex-direction: column; }
+.top {
+  flex: none; background: var(--bg); border-bottom: 1px solid var(--border);
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-left: max(12px, env(safe-area-inset-left, 0px)); padding-right: max(12px, env(safe-area-inset-right, 0px));
+}
+.top-row { display: flex; align-items: center; gap: 6px; min-height: 52px; }
+.top h1 { font-size: 17px; flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; text-align: center; }
+.top .brand { display: inline-flex; align-items: center; gap: 8px; }
+.top .brand svg { width: 26px; height: 26px; }
+.icon-btn { min-width: var(--tap); min-height: var(--tap); border: 0; background: transparent; border-radius: var(--radius); color: var(--accent2); font-size: 15px; display: inline-flex; align-items: center; justify-content: center; gap: 4px; padding: 0 8px; }
+.icon-btn:active { background: var(--hover); }
+.icon-btn svg { width: 22px; height: 22px; }
+.icon-btn.placeholder { visibility: hidden; }
+main {
+  flex: 1; overflow-y: auto; -webkit-overflow-scrolling: touch; overscroll-behavior: contain;
+  padding-block: 12px 24px;
+  padding-left: max(14px, env(safe-area-inset-left, 0px)); padding-right: max(14px, env(safe-area-inset-right, 0px));
+}
+body.kp-open main { padding-bottom: 340px; }
+.view { display: flex; flex-direction: column; gap: 12px; max-width: 720px; margin: 0 auto; }
+@media (min-width: 900px) {
+  .view { max-width: 1100px; display: grid; grid-template-columns: 1fr 1fr; align-items: start; }
+  .view > .wide, .view > .list, .view > .tiles, .view > .search, .view > .chips { grid-column: 1 / -1; }
+}
+.tabs {
+  flex: none; display: flex; border-top: 1px solid var(--border); background: var(--bg2);
+  padding-bottom: env(safe-area-inset-bottom, 0px); padding-left: env(safe-area-inset-left, 0px); padding-right: env(safe-area-inset-right, 0px);
+}
+body.kp-open .tabs { display: none; }
+.tab { flex: 1; min-height: 56px; background: none; border: 0; padding: 6px 4px 4px; color: var(--muted); font-size: 11px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; }
+.tab svg { width: 24px; height: 24px; }
+.tab[aria-selected="true"] { color: var(--accent2); }
+
+/* Startseite */
+.tiles { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+@media (min-width: 600px) { .tiles { grid-template-columns: repeat(3, 1fr); } }
+.tile { min-height: 92px; text-align: left; background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-card); padding: 12px; display: flex; flex-direction: column; justify-content: space-between; gap: 6px; }
+.tile:active { background: var(--hover); }
+.tile .tile-name { font-weight: 600; font-size: 16px; }
+.tile .tile-sub { font-size: 12px; color: var(--muted); }
+.tile svg { width: 26px; height: 26px; color: var(--accent2); }
+.group-title { display: flex; align-items: baseline; gap: 8px; margin-top: 6px; }
+.group-title h3 { flex: 1; }
+
+/* Karten, Felder */
+.card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-card); padding: 14px; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.card.result { border-color: var(--accent); }
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.rx { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.field-col { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.field-col > span { font-weight: 600; font-size: 14px; }
+.eye-R { color: var(--r-eye); } .eye-L { color: var(--l-eye); }
+.fld { width: 100%; min-height: 58px; text-align: left; background: var(--field); border: 1px solid var(--border); border-radius: var(--radius); padding: 6px 10px; display: flex; flex-direction: column; justify-content: center; gap: 1px; min-width: 0; }
+.fld.active { border-color: var(--accent2); box-shadow: 0 0 0 2px var(--accent2) inset; }
+.fld-label { font-size: 12px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.fld-row { display: flex; align-items: baseline; gap: 4px; }
+.fld-val { font-size: 22px; font-weight: 600; font-variant-numeric: tabular-nums; min-height: 1.3em; }
+.fld.empty .fld-val::before { content: "–"; color: var(--muted); font-weight: 400; }
+.fld.active .fld-val::after { content: ""; display: inline-block; width: 2px; height: 1.1em; background: var(--accent2); margin-left: 2px; vertical-align: -2px; animation: blink 1s steps(2) infinite; }
+@keyframes blink { to { opacity: 0; } }
+.fld-unit { font-size: 13px; color: var(--muted); }
+.field { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.field > label { font-size: 12px; color: var(--muted); }
+select, input.text, textarea { width: 100%; min-height: var(--tap); background: var(--field); border: 1px solid var(--border); border-radius: var(--radius); padding: 10px; min-width: 0; font-size: 16px; }
+textarea { min-height: 70px; resize: vertical; }
+
+/* Tastenfeld */
+#keypad { position: fixed; left: 0; right: 0; bottom: 0; z-index: 30; background: var(--bg2); border-top: 1px solid var(--border);
+  padding: 6px max(8px, env(safe-area-inset-right, 0px)) max(8px, env(safe-area-inset-bottom, 0px)) max(8px, env(safe-area-inset-left, 0px)); display: flex; flex-direction: column; gap: 6px; }
+.kp-head { display: flex; align-items: center; gap: 8px; min-height: 36px; }
+.kp-label { font-size: 13px; color: var(--muted); padding-left: 4px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
+.kp-value { flex: 1; text-align: right; font-size: 22px; font-weight: 600; font-variant-numeric: tabular-nums; white-space: nowrap; padding-right: 8px; min-width: 0; overflow: hidden; }
+.kp-close { min-height: 40px; padding: 0 16px; border: 0; border-radius: var(--radius); background: var(--accent); color: var(--on-accent); font-weight: 600; }
+.kp-quick { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; }
+.kp-quick::-webkit-scrollbar { display: none; }
+.kp-chip { flex: none; min-height: 36px; padding: 0 14px; border: 1px solid var(--border); border-radius: 999px; background: var(--key); font-variant-numeric: tabular-nums; }
+.kp-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; }
+.kp-key { min-height: 52px; border: 0; border-radius: var(--radius); background: var(--key); font-size: 22px; font-weight: 500; font-variant-numeric: tabular-nums; }
+.kp-key:active { background: var(--accent); color: var(--on-accent); }
+.kp-del, .kp-minus, .kp-plus, .kp-sign, .kp-comma { background: var(--key-strong); }
+.kp-next { background: var(--accent); color: var(--on-accent); font-size: 16px; font-weight: 600; }
+@media (max-height: 600px) { .kp-key { min-height: 42px; font-size: 19px; } }
+
+/* Ergebnisse */
+.results { display: flex; flex-direction: column; gap: 6px; }
+.res-row { display: flex; align-items: baseline; gap: 10px; padding: 6px 0; border-bottom: 1px solid var(--border); }
+.res-row:last-child { border-bottom: 0; }
+.res-label { flex: 1; color: var(--muted); font-size: 14px; min-width: 0; overflow-wrap: anywhere; }
+.res-value { font-variant-numeric: tabular-nums; font-size: 18px; font-weight: 600; white-space: nowrap; }
+.res-extra { color: var(--muted); font-size: 13px; white-space: nowrap; }
+.rx-box { background: var(--bg2); border-radius: var(--radius); padding: 10px; display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+.rx-box > span:first-child { font-weight: 600; font-size: 14px; }
+.rx-val { font-size: 22px; font-weight: 600; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+.rx-sub { font-size: 13px; color: var(--muted); }
+.big .rx-val { font-size: 22px; line-height: 1.25; }
+.note { color: var(--muted); font-size: 13px; }
+.warn { color: var(--warn); } .ok { color: var(--ok); } .danger { color: var(--danger); }
+table { border-collapse: collapse; width: 100%; font-variant-numeric: tabular-nums; font-size: 14px; }
+th, td { text-align: right; padding: 7px 6px; border-bottom: 1px solid var(--border); white-space: nowrap; }
+th:first-child, td:first-child { text-align: left; white-space: normal; }
+th { color: var(--muted); font-weight: 500; font-size: 12px; }
+tr.mark td { color: var(--accent2); font-weight: 600; }
+.table-wrap { overflow-x: auto; }
+.tabo { width: 100%; max-width: 420px; height: auto; margin: 0 auto; display: block; }
+.tabo .ring { fill: none; stroke: var(--border); stroke-width: 1.5; }
+.tabo .axis { stroke: var(--border); stroke-width: 1; }
+.tabo text { fill: var(--muted); font-size: 11px; font-family: var(--font); }
+.tabo .arrow-in { stroke: var(--accent2); stroke-width: 3; fill: var(--accent2); }
+.tabo .arrow-split { stroke: var(--ok); stroke-width: 2; stroke-dasharray: 4 3; fill: var(--ok); }
+.legend { display: flex; gap: 14px; font-size: 13px; color: var(--muted); flex-wrap: wrap; }
+.legend i { display: inline-block; width: 18px; height: 3px; vertical-align: middle; margin-right: 6px; }
+.legend .in i { background: var(--accent2); } .legend .split i { background: var(--ok); }
+
+/* Knöpfe, Schalter */
+.btn { min-height: var(--tap); background: var(--accent); color: var(--on-accent); border: 0; border-radius: var(--radius); padding: 10px 16px; font-weight: 600; }
+.btn:hover { filter: brightness(1.12); }
+.btn.ghost { background: transparent; color: var(--fg); border: 1px solid var(--border); font-weight: 500; }
+.btn.ghost:hover { border-color: var(--accent2); filter: none; }
+.btn.danger { background: var(--danger); }
+.btn.kofi { display: inline-flex; align-items: center; justify-content: center; text-decoration: none; align-self: flex-start; border-color: var(--accent2); }
+.btn.ghost.danger { background: transparent; color: var(--danger); border-color: var(--danger-border); }
+.btn.small { min-height: 40px; padding: 6px 12px; font-size: 14px; }
+.btn:disabled { opacity: .5; cursor: default; }
+.row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+.row.end { justify-content: flex-end; }
+.seg { display: flex; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+.seg button { flex: 1; min-height: 44px; background: transparent; border: 0; padding: 6px 10px; color: var(--muted); font-size: 14px; }
+.seg button[aria-pressed="true"] { background: var(--accent); color: var(--on-accent); }
+.toggle { display: flex; align-items: center; gap: 10px; min-height: var(--tap); padding: 6px 0; cursor: pointer; }
+.toggle-text { flex: 1; display: flex; flex-direction: column; min-width: 0; }
+.toggle-sub { font-size: 12px; color: var(--muted); }
+.toggle input { position: absolute; opacity: 0; width: 0; height: 0; }
+.toggle-ui { flex: none; width: 50px; height: 30px; border-radius: 999px; background: var(--border); position: relative; transition: background .15s; }
+.toggle-ui::after { content: ""; position: absolute; top: 3px; left: 3px; width: 24px; height: 24px; border-radius: 50%; background: #fff; transition: transform .15s; }
+.toggle input:checked + .toggle-ui { background: var(--ok); }
+.toggle input:checked + .toggle-ui::after { transform: translateX(20px); }
+.toggle input:focus-visible + .toggle-ui { outline: 2px solid var(--accent2); }
+.chips { display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none; padding-block: 2px; }
+.chips::-webkit-scrollbar { display: none; }
+.chip { flex: none; min-height: 38px; border: 1px solid var(--border); background: var(--card); color: var(--fg); border-radius: 999px; padding: 6px 14px; font-size: 14px; white-space: nowrap; }
+.chip[aria-selected="true"] { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.pill { display: inline-block; border-radius: 999px; padding: 1px 8px; font-size: 12px; background: var(--bg2); color: var(--muted); border: 1px solid var(--border); }
+.pill.custom { color: var(--ok); border-color: var(--ok); }
+.pills { display: flex; gap: 6px; flex-wrap: wrap; }
+
+/* Listen, Gläser, Preis */
+.search { display: flex; gap: 8px; }
+.search input { flex: 1; }
+.list { display: flex; flex-direction: column; gap: 8px; }
+.lens { min-height: 60px; display: flex; flex-direction: column; gap: 3px; text-align: left; width: 100%; background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-card); padding: 10px 14px; }
+.lens:active { background: var(--hover); }
+.lens-top { display: flex; align-items: baseline; gap: 10px; }
+.lens-name { font-weight: 600; flex: 1; min-width: 0; }
+.lens-price { font-variant-numeric: tabular-nums; white-space: nowrap; }
+.lens-sub { font-size: 13px; color: var(--muted); }
+.kv { display: grid; grid-template-columns: minmax(90px, 35%) 1fr; gap: 6px 10px; font-size: 14px; margin: 0; }
+.kv dt { color: var(--muted); } .kv dd { margin: 0; min-width: 0; overflow-wrap: anywhere; }
+.list-empty { color: var(--muted); text-align: center; padding: 30px 10px; }
+ul.plain { margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 4px; }
+.opt { display: flex; align-items: center; gap: 10px; min-height: var(--tap); width: 100%; text-align: left; background: transparent; border: 0; border-bottom: 1px solid var(--border); padding: 6px 0; }
+.opt:last-child { border-bottom: 0; }
+.opt .opt-box { flex: none; width: 26px; height: 26px; border-radius: 7px; border: 2px solid var(--border); display: inline-flex; align-items: center; justify-content: center; }
+.opt[aria-pressed="true"] .opt-box { background: var(--accent); border-color: var(--accent); }
+.opt[aria-pressed="true"] .opt-box::after { content: "✓"; color: var(--on-accent); font-size: 16px; font-weight: 700; }
+.opt .opt-text { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+.opt .opt-sub { font-size: 12px; color: var(--muted); }
+.opt .opt-price { font-variant-numeric: tabular-nums; white-space: nowrap; }
+.opt:disabled { opacity: .45; }
+.sum-total { display: flex; align-items: baseline; gap: 10px; padding-top: 8px; border-top: 2px solid var(--accent); }
+.sum-total span:first-child { flex: 1; font-weight: 600; }
+.sum-total span:last-child { font-size: 26px; font-weight: 700; font-variant-numeric: tabular-nums; }
+.pos-row { display: grid; grid-template-columns: 1fr 110px 44px; gap: 6px; align-items: center; }
+
+/* Toast, Dialog */
+#toast-root { position: fixed; left: 0; right: 0; bottom: calc(70px + env(safe-area-inset-bottom, 0px)); display: flex; flex-direction: column; align-items: center; gap: 6px; pointer-events: none; z-index: 40; padding-inline: 16px; }
+.toast { background: var(--card); border: 1px solid var(--ok); border-radius: 9px; padding: 10px 14px; font-size: 14px; opacity: 0; transform: translateY(8px); transition: opacity .2s, transform .2s; max-width: 100%; }
+.toast.show { opacity: 1; transform: none; }
+.toast.err { border-color: var(--danger); }
+.overlay { position: fixed; inset: 0; background: var(--overlay); display: flex; align-items: center; justify-content: center; padding: 16px; z-index: 50; }
+.modal { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 18px; width: min(100%, 380px); display: flex; flex-direction: column; gap: 12px; }
+.modal h2 { font-size: 17px; }
+.modal-actions { display: flex; gap: 8px; justify-content: flex-end; }
+@media (prefers-reduced-motion: reduce) { .toast, .toggle-ui, .toggle-ui::after { transition: none; } .fld.active .fld-val::after { animation: none; } }
+
+</style>
+  <script>
+"use strict";
+// Avina-Optik - Farbschema vor dem ersten Zeichnen setzen, damit die helle Variante ohne Flackern greift.
+// localStorage "theme": system | dark | light. "system" entfernt das Attribut, dann gilt prefers-color-scheme.
+(function () {
+  let t = "system";
+  try { t = localStorage.getItem("theme") || "system"; } catch (e) { /* privater Modus */ }
+  if (t === "dark" || t === "light") document.documentElement.setAttribute("data-theme", t);
+  else document.documentElement.removeAttribute("data-theme");
+})();
+
+</script>
+</head>
+<body>
+  <div class="app">
+    <header class="top">
+      <div class="top-row">
+        <button type="button" id="back" class="icon-btn placeholder" aria-label="Zurück">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>
+        </button>
+        <h1 id="title">Dioptra</h1>
+        <button type="button" id="action" class="icon-btn placeholder" aria-label="Kopieren">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h8"/></svg>
+        </button>
+      </div>
+    </header>
+    <main id="main" tabindex="-1"></main>
+    <nav id="tabs" class="tabs" aria-label="Bereiche">
+      <button type="button" class="tab" data-tab="start" aria-selected="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></svg>
+        Start
+      </button>
+      <button type="button" class="tab" data-tab="glaeser" aria-selected="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="7" cy="14" r="4"/><circle cx="17" cy="14" r="4"/><path d="M11 13.5c.5-1 1.5-1 2 0M3 13l1.5-5h2M21 13l-1.5-5h-2"/></svg>
+        Gläser
+      </button>
+      <button type="button" class="tab" data-tab="preis" aria-selected="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M16 5H10a3.5 3.5 0 0 0 0 7h4a3.5 3.5 0 0 1 0 7H7"/><path d="M12 3v18"/></svg>
+        Preis
+      </button>
+      <button type="button" class="tab" data-tab="mehr" aria-selected="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="5" cy="12" r="1.5"/><circle cx="12" cy="12" r="1.5"/><circle cx="19" cy="12" r="1.5"/></svg>
+        Mehr
+      </button>
+    </nav>
+  </div>
+  <div id="keypad" hidden></div>
+  <div id="toast-root" aria-live="polite"></div>
+  <div id="modal-root"></div>
+  <script>
+// ---- ui.js
+"use strict";
+// Dioptra - UI-Helfer: Elemente bauen, Zahlen formatieren, Speicher, Toast, Rückfrage, Kopieren.
+const $ = id => document.getElementById(id);
+
+function esc(s) {
+  return String(s == null ? "" : s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+}
+
+// el("div.card", {text:"..."}, child, child) - Baufunktion ohne innerHTML. Arrays und null als Kinder sind erlaubt.
+function el(spec, attrs, ...children) {
+  const m = spec.match(/^([a-z0-9]+)((?:\.[\w-]+)*)$/i);
+  const node = document.createElement(m ? m[1] : "div");
+  if (m && m[2]) node.className = m[2].split(".").filter(Boolean).join(" ");
+  if (attrs && typeof attrs === "object" && !(attrs instanceof Node) && !Array.isArray(attrs)) {
+    for (const k of Object.keys(attrs)) {
+      const v = attrs[k];
+      if (v == null) continue;
+      if (k === "text") node.textContent = v;
+      else if (k === "on") for (const ev of Object.keys(v)) node.addEventListener(ev, v[ev]);
+      else if (k === "data") for (const d of Object.keys(v)) node.dataset[d] = v[d];
+      else node.setAttribute(k, v);
+    }
+  } else if (attrs != null) children.unshift(attrs);
+  for (const c of children.flat(Infinity)) {
+    if (c == null || c === false) continue;
+    node.append(c instanceof Node ? c : document.createTextNode(String(c)));
+  }
+  return node;
+}
+
+// ---- Zahlen -------------------------------------------------------------------------------------
+function parseNum(s) {
+  if (typeof s === "number") return s;
+  if (s == null) return NaN;
+  s = String(s).trim().replace(/−/g, "-").replace(/\s+/g, "");
+  if (s.includes(",")) s = s.replace(/\./g, "");                       // 2.304,85 → 2304,85
+  else if (/^[-+]?\d{1,3}(\.\d{3})+$/.test(s)) s = s.replace(/\./g, ""); // 2.304 → 2304
+  s = s.replace(/,/g, ".");
+  if (s === "" || s === "-" || s === "+" || s === ".") return NaN;
+  return Number(s);
+}
+function fmt(v, decimals, opts) {
+  if (v == null || Number.isNaN(v) || !Number.isFinite(v)) return "–";
+  const d = decimals == null ? 2 : decimals;
+  if (Math.abs(v) < Math.pow(10, -d) / 2) v = 0;
+  let s = Math.abs(v).toFixed(d).replace(".", ",");
+  if (v < 0) s = "-" + s;
+  else if (opts && opts.sign && v > 0) s = "+" + s;
+  return s;
+}
+function fmtDpt(v) { return fmt(v, 2, { sign: true }); }
+function fmtAxis(v) { if (v == null || Number.isNaN(v)) return "–"; return String(Math.round(v)) + "°"; }
+function fmtEur(v) { if (v == null || Number.isNaN(v)) return "–"; return v.toLocaleString("de-DE", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + " €"; }
+function num(v, fallback) { return (v == null || Number.isNaN(v)) ? fallback : v; }
+
+// ---- Speicher -------------------------------------------------------------------------------------
+const Store = {
+  get(key, fallback) {
+    try { const v = localStorage.getItem(key); return v == null ? fallback : JSON.parse(v); }
+    catch (e) { return fallback; }
+  },
+  set(key, value) { try { localStorage.setItem(key, JSON.stringify(value)); return true; } catch (e) { return false; } },
+  remove(key) { try { localStorage.removeItem(key); } catch (e) { /* egal */ } },
+  keys(prefix) { try { return Object.keys(localStorage).filter(k => k.startsWith(prefix)); } catch (e) { return []; } }
+};
+
+// ---- Toast ------------------------------------------------------------------------------------------
+function toast(msg, cls) {
+  const root = $("toast-root");
+  if (!root) return;
+  const t = el("div.toast" + (cls ? "." + cls : ""), { role: cls === "err" ? "alert" : "status", text: msg });
+  root.append(t);
+  requestAnimationFrame(() => t.classList.add("show"));
+  setTimeout(() => { t.classList.remove("show"); setTimeout(() => t.remove(), 250); }, 3200);
+}
+
+// ---- Rückfrage ohne Browserdialog ----------------------------------------------------------------
+function confirmDlg(title, msg, okLabel, danger) {
+  return new Promise(resolve => {
+    const root = $("modal-root");
+    const opener = document.activeElement;
+    const cancel = el("button.btn.ghost", { type: "button", text: "Abbrechen" });
+    const ok = el("button.btn" + (danger ? ".danger" : ""), { type: "button", text: okLabel || "Bestätigen" });
+    const box = el("div.modal", { role: "dialog", "aria-modal": "true", "aria-labelledby": "modal-title" },
+      el("h2", { id: "modal-title", text: title }), el("p", { text: msg }), el("div.modal-actions", cancel, ok));
+    const overlay = el("div.overlay", box);
+    function done(v) { overlay.remove(); document.removeEventListener("keydown", onKey); if (opener && opener.focus) opener.focus(); resolve(v); }
+    function onKey(e) { if (e.key === "Escape") done(false); }
+    cancel.addEventListener("click", () => done(false));
+    ok.addEventListener("click", () => done(true));
+    overlay.addEventListener("click", e => { if (e.target === overlay) done(false); });
+    document.addEventListener("keydown", onKey);
+    root.append(overlay);
+    ok.focus();
+  });
+}
+
+// ---- Kopieren -------------------------------------------------------------------------------------------
+async function copyText(text, okMsg) {
+  try { await navigator.clipboard.writeText(text); toast(okMsg || "Kopiert."); return true; }
+  catch (e) {
+    const ta = el("textarea", { "aria-hidden": "true" }); ta.value = text; ta.className = "skip";
+    document.body.append(ta); ta.select();
+    let ok = false; try { ok = document.execCommand("copy"); } catch (e2) { /* nichts */ }
+    ta.remove(); toast(ok ? (okMsg || "Kopiert.") : "Kopieren nicht möglich.", ok ? "" : "err"); return ok;
+  }
+}
+function copyButton(getText, label) {
+  return el("button.btn.ghost.small", { type: "button", text: label || "Kopieren", on: { click: () => copyText(getText()) } });
+}
+
+// ---- Bausteine für Ergebnisse -------------------------------------------------------------------------
+function resultRow(label, value, extra) {
+  return el("div.res-row", el("span.res-label", { text: label }), el("span.res-value", { text: value }), extra ? el("span.res-extra", { text: extra }) : null);
+}
+function section(title, ...children) { const n = el("section.card", title ? el("h3", { text: title }) : null, ...children); n.wide = () => { n.classList.add("wide"); return n; }; return n; }
+function note(text) { return el("p.note", { text }); }
+function eyeTitle(eye, text) { return el("span.eye-" + eye, { text: text || (eye === "R" ? "Rechts" : "Links") }); }
+function rxBox(eye, title, main, ...subs) {
+  const val = main instanceof Node ? el("span.rx-val", main) : el("span.rx-val", { text: main == null ? "–" : main });
+  return el("div.rx-box", eyeTitle(eye, title), val, ...subs.filter(Boolean).map(s => el("span.rx-sub", { text: s })));
+}
+function segmented(options, value, onChange, label) {
+  const seg = el("div.seg", { role: "group", "aria-label": label || "" });
+  for (const [v, text] of options) {
+    seg.append(el("button", { type: "button", text, "aria-pressed": String(v === value), data: { v }, on: { click: () => {
+      for (const b of seg.children) b.setAttribute("aria-pressed", String(b.dataset.v === String(v)));
+      onChange(v);
+    } } }));
+  }
+  seg.value = v => { for (const b of seg.children) b.setAttribute("aria-pressed", String(b.dataset.v === String(v))); };
+  return seg;
+}
+function toggleRow(label, checked, onChange, sub) {
+  const input = el("input", { type: "checkbox", role: "switch" }); input.checked = !!checked;
+  input.addEventListener("change", () => onChange(input.checked));
+  const lab = el("label.toggle", el("span.toggle-text", el("span", { text: label }), sub ? el("span.toggle-sub", { text: sub }) : null), input, el("span.toggle-ui", { "aria-hidden": "true" }));
+  lab.input = input;
+  return lab;
+}
+function downloadText(name, text, mime) {
+  const blob = new Blob([text], { type: mime || "application/json" });
+  const url = URL.createObjectURL(blob);
+  const a = el("a", { href: url, download: name });
+  document.body.append(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 2000);
+}
+
+// ---- core.js
+"use strict";
+// Dioptra - Rechenkern. Reine Funktionen ohne DOM, damit sie unter Node getestet werden können.
+// Winkel: TABO-Schema, 0° rechts, 90° oben, gegen den Uhrzeigersinn, wie vom Betrachter (Augenoptiker) gesehen.
+// Daraus folgt: rechtes Auge 0° = nasal (innen), linkes Auge 0° = temporal (außen).
+(function (g) {
+  const RAD = Math.PI / 180;
+
+  function roundTo(v, step) { return Math.round(v / step) * step; }
+  function norm360(a) { a = a % 360; if (a < 0) a += 360; return a; }
+  function nearZero(v) { return Math.abs(v) < 1e-9; }
+
+  // ---- HSA (Hornhautscheitelabstand) ------------------------------------------------------------
+  // Wirkung eines Hauptschnitts in neuem Abstand: F' = F / (1 - d * F), d = (alt - neu) in Metern.
+  // 0 mm steht für die Kontaktlinse. Ergebnis wie beim HSA-Rechner von DER AUGENOPTIKER.
+  function hsaMeridian(F, hsaOld, hsaNew) {
+    if (nearZero(F)) return 0;
+    const d = (hsaOld - hsaNew) / 1000;
+    return F / (1 - d * F);
+  }
+  function hsa(sph, cyl, axis, hsaOld, hsaNew) {
+    const m1 = sph, m2 = sph + cyl;
+    const n1 = hsaMeridian(m1, hsaOld, hsaNew);
+    const n2 = hsaMeridian(m2, hsaOld, hsaNew);
+    return { m1, m2, n1, n2, sph: n1, cyl: n2 - n1, axis };
+  }
+
+  // ---- Prismen ------------------------------------------------------------------------------------
+  function dirH(eye, x) {
+    if (nearZero(x)) return "";
+    if (eye === "R") return x > 0 ? "innen" : "außen";
+    return x > 0 ? "außen" : "innen";
+  }
+  function dirV(y) { if (nearZero(y)) return ""; return y > 0 ? "oben" : "unten"; }
+
+  // Eingabe je Auge: Prisma (cm/m) und Basislage (°). Zusammenfassung bezogen auf das rechte Auge:
+  // horizontal gilt innen = innen (Spiegelung), vertikal gilt oben links = unten rechts.
+  function prism(rP, rB, lP, lB) {
+    const r = { h: rP * Math.cos(rB * RAD), v: rP * Math.sin(rB * RAD) };
+    const l = { h: lP * Math.cos(lB * RAD), v: lP * Math.sin(lB * RAD) };
+    const total = { h: r.h - l.h, v: r.v - l.v };
+    const p = Math.hypot(total.h, total.v);
+    const base = nearZero(p) ? 0 : norm360(Math.atan2(total.v, total.h) / RAD);
+    const half = p / 2;
+    return {
+      r: { h: r.h, v: r.v, hDir: dirH("R", r.h), vDir: dirV(r.v) },
+      l: { h: l.h, v: l.v, hDir: dirH("L", l.h), vDir: dirV(l.v) },
+      total: { h: total.h, v: total.v, hDir: dirH("R", total.h), vDir: dirV(total.v) },
+      result: { p, base },
+      split: { r: { p: half, base }, l: { p: half, base: nearZero(p) ? 0 : norm360(base + 180) } }
+    };
+  }
+
+  // Ein Prisma in Basislage (°) in Komponenten eines Auges zerlegen, mit Richtungsworten.
+  function prismComponents(eye, p, base) {
+    const h = p * Math.cos(base * RAD), v = p * Math.sin(base * RAD);
+    return { h, v, hDir: dirH(eye, h), vDir: dirV(v) };
+  }
+
+  // ---- Transposition / sphärisches Äquivalent --------------------------------------------------
+  function transpose(sph, cyl, axis) {
+    if (nearZero(cyl)) return { sph, cyl: 0, axis };
+    let a = axis + 90; if (a > 180) a -= 180; if (a <= 0) a += 180;
+    return { sph: sph + cyl, cyl: -cyl, axis: a };
+  }
+  function sphEq(sph, cyl) { return sph + cyl / 2; }
+
+  // ---- Nahwerte -------------------------------------------------------------------------------------
+  function near(sph, cyl, axis, add, factor) {
+    const f = (factor == null) ? 1 : factor;
+    return { sph: sph + add * f, cyl, axis };
+  }
+
+  // ---- Prentice: prismatische Nebenwirkung durch Dezentration ----------------------------------
+  // Wirkungsmatrix des Glases im TABO-System: Fxx = S + C sin²a, Fyy = S + C cos²a, Fxy = -C sin a cos a.
+  // Dezentrationsvektor d (mm) des optischen Mittelpunkts gegenüber der Pupille, Basisvektor P = F·d/10.
+  // dxIn: Dezentration nach innen in mm (negativ = außen), dyUp: nach oben in mm (negativ = unten).
+  function prentice(eye, sph, cyl, axis, dxIn, dyUp) {
+    const a = axis * RAD, s = Math.sin(a), c = Math.cos(a);
+    const Fxx = sph + cyl * s * s, Fyy = sph + cyl * c * c, Fxy = -cyl * s * c;
+    const dx = (eye === "R") ? dxIn : -dxIn;  // in TABO-x umrechnen
+    const dy = dyUp;
+    const h = (Fxx * dx + Fxy * dy) / 10;
+    const v = (Fxy * dx + Fyy * dy) / 10;
+    const p = Math.hypot(h, v);
+    const base = nearZero(p) ? 0 : norm360(Math.atan2(v, h) / RAD);
+    return { h, v, hDir: dirH(eye, h), vDir: dirV(v), p, base };
+  }
+
+  // ---- Mindestdurchmesser ------------------------------------------------------------------------
+  // Dezentration je Auge = (Scheibenlänge + Steg) / 2 - monokulare PD. Mindestdurchmesser = größte
+  // Scheibendiagonale (ED) + 2 · Dezentration (horizontal und vertikal als Betrag) + Zugabe.
+  function minDiameter(o) {
+    const ed = o.ed > 0 ? o.ed : Math.hypot(o.a, o.b || 0);
+    const blanks = [50, 55, 60, 65, 70, 75, 80, 85];
+    function eye(pd, dv) {
+      const dez = (o.a + o.steg) / 2 - pd;
+      const dezV = dv || 0;
+      const minD = ed + 2 * Math.abs(dez) + 2 * Math.abs(dezV) + (o.zugabe == null ? 2 : o.zugabe);
+      const blank = blanks.find(b => b >= minD) || null;
+      return { dez, dezV, minD, blank };
+    }
+    return { ed, r: eye(o.pdR, o.dvR), l: eye(o.pdL, o.dvL) };
+  }
+
+  // ---- Glasdicke (Näherung) ---------------------------------------------------------------------
+  // Pfeilhöhe einer Fläche mit der Flächenwirkung F (dpt) bei Brechzahl n und Durchmesser d (mm):
+  // r = (n - 1) / |F|, s = r - sqrt(r² - (d/2)²).
+  // Basiskurve (Vorderfläche) nach Vogel: Plusglas F1 = F + 6, Minusglas F1 = F/2 + 6; Rückfläche F2 = F - F1.
+  // Mitte minus Rand = s(F1) - s(F2). Dünne-Linsen-Näherung, Fertigungsdetails bleiben außen vor.
+  function sag(F, n, d) {
+    if (nearZero(F)) return 0;
+    const r = (n - 1) / Math.abs(F) * 1000; // mm
+    const h = d / 2;
+    if (h >= r) return r; // Halbkugel, Grenzfall
+    return r - Math.sqrt(r * r - h * h);
+  }
+  function baseCurve(F) { return F > 0 ? F + 6 : F / 2 + 6; }
+  function thickness(F, n, d, tMin, F1) {
+    if (F1 == null) F1 = baseCurve(F);
+    const F2 = F - F1;
+    const diff = sag(F1, n, d) - sag(F2, n, d); // Mitte minus Rand
+    if (diff >= 0) return { center: tMin + diff, edge: tMin, sag: diff, F1, F2 };
+    return { center: tMin, edge: tMin - diff, sag: -diff, F1, F2 };
+  }
+  // Für Sph/Zyl: ungünstigster Hauptschnitt bestimmt die größte Dicke.
+  function worstMeridian(sph, cyl) {
+    const m1 = sph, m2 = sph + cyl;
+    return Math.abs(m1) >= Math.abs(m2) ? m1 : m2;
+  }
+
+
+  // ---- Visus ------------------------------------------------------------------------------------------
+  // Dezimalvisus V, LogMAR = -log10(V), Snellen 6/x mit x = 6/V, 20/x mit x = 20/V.
+  function visus(v) {
+    if (!(v > 0)) return null;
+    return { dec: v, logmar: -Math.log10(v), snellen6: 6 / v, snellen20: 20 / v };
+  }
+  function visusFromLogmar(l) { return Math.pow(10, -l); }
+
+  // ---- Tönung: Filterkategorien nach EN ISO 12312-1 (Lichttransmission in %) ---------------------------
+  const TINT_CATS = [
+    { cat: 0, min: 80, max: 100, use: "Klar oder sehr hell, auch nachts im Straßenverkehr" },
+    { cat: 1, min: 43, max: 80, use: "Hell, bedeckter Himmel" },
+    { cat: 2, min: 18, max: 43, use: "Mittel, normaler Sonnenschein" },
+    { cat: 3, min: 8, max: 18, use: "Dunkel, starke Sonne, Strand, Berge" },
+    { cat: 4, min: 3, max: 8, use: "Sehr dunkel, Hochgebirge und Gletscher. Nicht zum Autofahren" }
+  ];
+  function tintCategory(t) {
+    if (t == null || Number.isNaN(t)) return null;
+    for (const c of TINT_CATS) if (t >= c.min && (t <= c.max)) return c;
+    return t > 100 ? TINT_CATS[0] : (t < 3 ? { cat: 4, min: 0, max: 3, use: "Dunkler als Kategorie 4, keine Sonnenbrille nach Norm" } : null);
+  }
+
+  // ---- Kassenanteil Brillengläser (Festbetragstabelle, siehe data-extra.js) -------------------------
+  // Liefert je Glas Grundbetrag und Zuschläge. table: {gruppen:[{typ, sphMax, cylMax, hb, betrag}], zuschlaege:{...}}.
+  function festbetragGlas(table, o) {
+    const sph = Math.abs(o.sph || 0), cyl = Math.abs(o.cyl || 0);
+    const rows = table.gruppen.filter(g => g.typ === o.typ);
+    const cylBase = Math.min(cyl, 4); // über 4 dpt kommt der Zuschlag auf die Gruppe „cyl bis 4"
+    let base = null;
+    for (const g of rows) if (sph <= g.sphMax + 1e-9 && cylBase <= g.cylMax + 1e-9) { base = g; break; }
+    if (cyl > 8) base = null;
+    const parts = [];
+    if (base) parts.push({ name: base.name, betrag: base.betrag });
+    const z = table.zuschlaege;
+    if (cyl > 6) parts.push({ name: "Zuschlag cyl > 6 bis 8", betrag: z.cyl8 });
+    else if (cyl > 4) parts.push({ name: "Zuschlag cyl > 4 bis 6", betrag: z.cyl6 });
+    if (o.prisma > 3) parts.push({ name: "Zuschlag Prisma > 3 bis 6 cm/m", betrag: z.prisma6 });
+    else if (o.prisma > 0) parts.push({ name: "Zuschlag Prisma bis 3 cm/m", betrag: z.prisma3 });
+    if (o.lichtschutz) parts.push({ name: "Lichtschutz", betrag: z.lichtschutz });
+    if (o.uv400) parts.push({ name: "UV-Kantenfilter 400 nm", betrag: z.uv400 });
+    const sum = parts.reduce((a, p) => a + p.betrag, 0);
+    return { base, parts, sum, ok: !!base, hinweis: base ? "" : (sph > 14 ? "Über ±14 dpt: kein Festbetrag, Einzelfall" : (cyl > 8 ? "Zylinder über 8 dpt: Einzelfall" : "Keine Gruppe gefunden")) };
+  }
+  // Gesetzliche Zuzahlung Hilfsmittel: 10 % des Betrags, mindestens 5, höchstens 10 € je Hilfsmittel; unter 18 keine.
+  function zuzahlung(betrag, unter18) {
+    if (unter18 || betrag <= 0) return 0;
+    return Math.min(10, Math.max(5, betrag * 0.1));
+  }
+
+  // ---- Hörakustik: Eigenanteil -----------------------------------------------------------------------
+  // o: {preis, preisIstEigenanteil, ohren(1|2), festbetrag, zweitesOhrFaktor, zuzahlung, otoplastik, ladestation, sonstiges}
+  function hoerEigenanteil(o) {
+    const n = o.ohren === 2 ? 2 : 1;
+    const kasse1 = o.festbetrag, kasse2 = n === 2 ? o.festbetrag * (o.zweitesOhrFaktor == null ? 0.8 : o.zweitesOhrFaktor) : 0;
+    const kasseGeraete = kasse1 + kasse2;
+    const kasseOto = (o.otoplastik || 0) * n;
+    let geraeteEigen, geraeteGesamt;
+    if (o.preisIstEigenanteil) { geraeteEigen = o.preis * n; geraeteGesamt = geraeteEigen + kasseGeraete; }
+    else { geraeteGesamt = o.preis * n; geraeteEigen = Math.max(0, geraeteGesamt - kasseGeraete); }
+    const zuz = (o.zuzahlung == null ? 10 : o.zuzahlung) * n;
+    const extras = (o.ladestation || 0) + (o.sonstiges || 0);
+    return { n, kasseGeraete, kasseOto, geraeteGesamt, geraeteEigen, zuzahlung: zuz, extras, zuZahlen: geraeteEigen + zuz + extras };
+  }
+  // Batteriebedarf: Laufzeit in Tagen je Zelle, Geräte, Preis je Zelle → Zellen und Kosten je Jahr.
+  function batterieJahr(laufzeitTage, geraete, preisJeZelle) {
+    const zellen = Math.ceil(365 / laufzeitTage) * geraete;
+    return { zellen, kosten: zellen * preisJeZelle };
+  }
+
+  g.Calc = { roundTo, norm360, hsa, hsaMeridian, prism, prismComponents, transpose, sphEq, near,
+    prentice, minDiameter, sag, baseCurve, thickness, worstMeridian, dirH, dirV,
+    visus, visusFromLogmar, TINT_CATS, tintCategory, festbetragGlas, zuzahlung, hoerEigenanteil, batterieJahr };
+})(typeof window !== "undefined" ? window : globalThis);
+
+// ---- keypad.js
+"use strict";
+// Dioptra - Zahlenfelder mit eigenem Tastenfeld. Kein iOS-Tastaturwechsel, kein Zoom, große Tasten.
+// Ein Feld ist ein Knopf mit Bezeichnung, Wert und Einheit. Tippen öffnet das Tastenfeld unten.
+// Felder einer Ansicht werden in Reihenfolge registriert, „Weiter" springt zum nächsten.
+const Keypad = {
+  root: null, field: null, fresh: true, fields: [],
+  mount() {
+    this.root = $("keypad");
+    this.root.replaceChildren();
+    const quick = el("div.kp-quick");
+    const grid = el("div.kp-grid");
+    const keys = [["7"], ["8"], ["9"], ["⌫", "del"], ["4"], ["5"], ["6"], ["−", "minus"], ["1"], ["2"], ["3"], ["+", "plus"], ["±", "sign"], ["0"], [",", "comma"], ["Weiter", "next"]];
+    for (const [label, action] of keys) {
+      grid.append(el("button.kp-key" + (action ? ".kp-" + action : ""), { type: "button", text: label, "aria-label": action === "del" ? "Löschen" : (action === "minus" ? "Schritt kleiner" : (action === "plus" ? "Schritt größer" : label)),
+        on: { click: () => this.press(action || label) } }));
+    }
+    const head = el("div.kp-head", el("span.kp-label"), el("span.kp-value", { "aria-live": "polite" }), el("button.kp-close", { type: "button", text: "Fertig", on: { click: () => this.close() } }));
+    this.root.append(head, quick, grid);
+    this.quick = quick; this.label = head.firstChild; this.valueEl = head.children[1];
+    // Tipp außerhalb schließt das Tastenfeld, aber erst nachdem der getippte Knopf seine Arbeit getan hat.
+    // Beim Schließen verschiebt sich das Layout (Reiter kommen zurück); passiert das vor dem Klick, geht er verloren.
+    document.addEventListener("click", e => {
+      if (!this.field) return;
+      if (this.root.contains(e.target) || (e.target.closest && e.target.closest(".fld"))) return;
+      this.close();
+    });
+  },
+  open(f) {
+    if (this.field && this.field !== f) { this.field.el.classList.remove("active"); this.field.commit(); }
+    const wasOpen = !this.root.hidden;
+    this.field = f; this.fresh = true;
+    f.el.classList.add("active");
+    this.label.textContent = f.o.label + (f.o.unit ? " in " + f.o.unit : "");
+    this.quick.replaceChildren();
+    for (const q of (f.o.quick || [])) this.quick.append(el("button.kp-chip", { type: "button", text: q.label || f.format(q), on: { click: () => { f.set(typeof q === "object" ? q.v : q); this.fresh = true; } } }));
+    this.quick.hidden = !(f.o.quick && f.o.quick.length);
+    this.root.hidden = false; document.body.classList.add("kp-open");
+    this.mirror();
+    // Nur beim Öffnen aus geschlossenem Zustand zum Feld rollen. Bei „Weiter" bleibt die Seite, wo sie ist;
+    // der Wert steht in der Kopfzeile des Tastenfelds.
+    if (!wasOpen) setTimeout(() => f.el.scrollIntoView({ block: "center", behavior: "smooth" }), 50);
+  },
+  // Wert des aktiven Feldes in der Kopfzeile des Tastenfelds spiegeln.
+  mirror() {
+    const f = this.field; if (!f || !this.valueEl) return;
+    const raw = this.fresh ? (f.value == null ? "" : f.format(f.value)) : f.text;
+    this.valueEl.textContent = (raw === "" ? "–" : raw) + (f.o.unit ? " " + f.o.unit : "");
+  },
+  close() {
+    if (this.field) { this.field.el.classList.remove("active"); this.field.commit(); }
+    this.field = null; this.root.hidden = true; document.body.classList.remove("kp-open");
+  },
+  press(k) {
+    const f = this.field; if (!f) return;
+    if (k === "next") { const i = this.fields.indexOf(f); const n = this.fields[i + 1]; if (n) { f.commit(); this.open(n); n.el.focus({ preventScroll: true }); } else this.close(); return; }
+    if (k === "plus" || k === "minus") { const v = num(f.value, 0); f.set(Calc.roundTo(v + (k === "plus" ? f.o.step : -f.o.step), f.o.step)); this.fresh = true; return; }
+    if (k === "sign") {
+      // Bei vorhandenem Wert kippt das Vorzeichen. Bei leerem Feld oder 0 wird ein Minus vorangestellt, das beim
+      // Weitertippen stehen bleibt (erst ±, dann 6,5 ergibt −6,50).
+      if (f.value != null && f.value !== 0 && this.fresh) { f.set(-f.value); this.fresh = true; return; }
+      let t = this.fresh ? "" : f.text;
+      t = t.startsWith("-") ? t.slice(1) : "-" + t;
+      this.applyText(f, t); return;
+    }
+    // Ziffern und Komma. Beim Überschreiben eines negativen Werts bleibt das Minus stehen, weil bei Brillenwerten
+    // das Vorzeichen zum Feld gehört; ± kippt es bei Bedarf.
+    let t = this.fresh ? ((f.value != null && f.value < 0) ? "-" : "") : f.text;
+    if (k === "del") t = this.fresh ? "" : t.slice(0, -1);
+    else if (k === "comma") { if (!t.includes(",")) t = (t === "" || t === "-") ? t + "0," : t + ","; }
+    else t = (t === "0" || t === "-0") ? t.slice(0, -1) + k : t + k; // führende Null ersetzen
+    this.applyText(f, t);
+  },
+  applyText(f, t) {
+    this.fresh = false;
+    f.text = t;
+    const v = (t === "" || t === "-") ? null : parseNum(t);
+    f.value = (v == null || Number.isNaN(v)) ? null : v;
+    f.render(true); f.changed();
+  }
+};
+
+// field({id, label, unit, step, decimals, sign, min, max, quick:[...], value, onChange})
+function field(o) {
+  const f = { o, value: o.value == null ? null : o.value, text: "" };
+  f.format = v => (v == null || Number.isNaN(v)) ? "" : fmt(v, o.decimals == null ? 2 : o.decimals, { sign: !!o.sign });
+  f.render = raw => {
+    f.valEl.textContent = raw ? (f.text || "") : (f.value == null ? "" : f.format(f.value));
+    f.el.classList.toggle("empty", f.value == null && !(raw && f.text));
+    if (Keypad.field === f) Keypad.mirror();
+  };
+  f.set = v => {
+    if (v != null && !Number.isNaN(v)) {
+      if (o.min != null && v < o.min) v = o.min;
+      if (o.max != null && v > o.max) v = o.max;
+    }
+    f.value = (v == null || Number.isNaN(v)) ? null : v; f.text = f.value == null ? "" : f.format(f.value); f.render(); f.changed();
+  };
+  f.commit = () => { if (f.value != null) f.set(Calc.roundTo(f.value, o.decimals == null ? 0.01 : Math.pow(10, -o.decimals))); else f.render(); };
+  f.changed = () => { if (o.onChange) o.onChange(f.value); };
+  f.valEl = el("span.fld-val");
+  f.el = el("button.fld", { type: "button", id: o.id, "aria-label": o.label + (o.unit ? " in " + o.unit : "") },
+    el("span.fld-label", { text: o.label }), el("span.fld-row", f.valEl, o.unit ? el("span.fld-unit", { text: o.unit }) : null));
+  f.el.addEventListener("click", () => Keypad.open(f));
+  f.el.addEventListener("keydown", e => {
+    if (e.key === "ArrowUp") { e.preventDefault(); f.set(Calc.roundTo(num(f.value, 0) + o.step, o.step)); }
+    else if (e.key === "ArrowDown") { e.preventDefault(); f.set(Calc.roundTo(num(f.value, 0) - o.step, o.step)); }
+    else if (e.key === "Backspace") { e.preventDefault(); f.set(null); }
+    else if (/^[0-9]$/.test(e.key) || e.key === "," || e.key === "." || e.key === "-") { e.preventDefault(); if (Keypad.field !== f) Keypad.open(f); Keypad.press(e.key === "-" ? "sign" : ((e.key === "." || e.key === ",") ? "comma" : e.key)); }
+  });
+  f.render();
+  Keypad.fields.push(f);
+  return f;
+}
+
+// Gruppe von Feldern mit Speicherung: fields({key, defs:[{name, ...fieldopts}], onChange}) → {get, fields, node(name)}
+function fieldGroup(key, defs, onChange) {
+  const saved = Store.get(key, {});
+  const g = { fields: {}, key };
+  g.get = () => { const o = {}; for (const n of Object.keys(g.fields)) o[n] = g.fields[n].value; return o; };
+  g.save = () => Store.set(key, g.get());
+  g.reset = () => { for (const n of Object.keys(g.fields)) { const f = g.fields[n]; f.value = f.o.initial == null ? null : f.o.initial; f.text = ""; f.render(); } Store.remove(key); onChange(g.get()); };
+  for (const d of defs) {
+    const v = saved[d.name] != null ? saved[d.name] : (d.initial == null ? null : d.initial);
+    g.fields[d.name] = field(Object.assign({}, d, { id: key.replace(/\W/g, "_") + "_" + d.name, value: v, onChange: () => { g.save(); onChange(g.get()); } }));
+  }
+  g.node = n => g.fields[n].el;
+  return g;
+}
+const RX_QUICK = { axis: [0, 45, 90, 135, 180], hsa: [{ v: 0, label: "KL 0" }, 12, 13, 14, 15], base: [0, 90, 180, 270], add: [1, 1.5, 2, 2.5, 3] };
+function rxDefs(prefix, eye, opts) {
+  const d = [
+    { name: eye + "_sph", label: "Sphäre", unit: "dpt", step: 0.25, sign: true, min: -30, max: 30 },
+    { name: eye + "_cyl", label: "Zylinder", unit: "dpt", step: 0.25, sign: true, min: -10, max: 10 },
+    { name: eye + "_axis", label: "Achse", unit: "°", step: 1, decimals: 0, min: 0, max: 180, quick: RX_QUICK.axis }];
+  if (opts && opts.add) d.push({ name: eye + "_add", label: "Addition", unit: "dpt", step: 0.25, min: 0, max: 5, quick: RX_QUICK.add });
+  return d;
+}
+function rxGrid(g, extraPerEye) {
+  function col(eye) {
+    const kids = [eyeTitle(eye, eye === "R" ? "Rechts (R)" : "Links (L)"), g.node(eye + "_sph"), g.node(eye + "_cyl"), g.node(eye + "_axis")];
+    if (g.fields[eye + "_add"]) kids.push(g.node(eye + "_add"));
+    if (extraPerEye) for (const n of extraPerEye) kids.push(g.node(eye + "_" + n));
+    return el("div.field-col", kids);
+  }
+  return el("div.rx", col("R"), col("L"));
+}
+function eyeRx(v, eye) {
+  const s = v[eye + "_sph"];
+  if (s == null) return null;
+  return { sph: s, cyl: num(v[eye + "_cyl"], 0), axis: num(v[eye + "_axis"], 0), add: v[eye + "_add"] };
+}
+function rxText(r) { return fmtDpt(r.sph) + (r.cyl ? " " + fmtDpt(r.cyl) + " A " + fmtAxis(r.axis) : ""); }
+// Zweizeilig für die großen Ergebniskästen: Sphäre oben, Zylinder und Achse darunter.
+function rxLines(r) { return r.cyl ? el("span", fmtDpt(r.sph), el("br"), fmtDpt(r.cyl) + " A " + fmtAxis(r.axis)) : el("span", fmtDpt(r.sph)); }
+
+// ---- data-kind.js
+"use strict";
+// Dioptra - Startbestand der Gläserdatenbank: das KIND-Glassortiment in Deutschland.
+// Quelle: kind.com (Brillengläser, Glasoptionen, Brillenglas-Preise, Gleitsicht), Stand 14.10.2026.
+// Preise in Euro je Glaspaar (Grundgläser) bzw. Aufpreis je Paar (Optionen). Herstellerbestellnummern
+// sind nicht öffentlich und werden im Geschäft nachgetragen (Feld „Bestellnummer“).
+const SEED_VERSION = 1;
+// gruppe: index | veredelung | toenung | zuschlag. In den Gruppen index und toenung ist nur eine Option je Brille möglich.
+const KIND_SEED = [
+  // Einstärkengläser
+  { id: "kind-ev-q", hersteller: "KIND", name: "KIND Qualität", typ: "Einstärken", stufe: "Qualität", preis: 49, index: "1,5",
+    verfuegbar: "Online und Fachgeschäft", eigenschaften: ["Leichtes Kunststoffglas", "Entspiegelt", "Gehärtet", "Wasserabweisend, pflegeleicht", "UV-Schutz"],
+    hinweis: "Einstieg. Aufpreis Prisma 25 € je Glas." },
+  { id: "kind-ev-qp", hersteller: "KIND", name: "KIND Qualität Plus", typ: "Einstärken", stufe: "Qualität Plus", preis: 149, index: "1,5",
+    verfuegbar: "Nur Fachgeschäft", eigenschaften: ["Flacheres Design, dünner und leichter", "Klare Sicht bis zum Rand", "Weniger Vergrößerung/Verkleinerung der Augen", "Ultra-robust, superentspiegelt, antistatisch", "Wasser- und schmutzabweisend"],
+    hinweis: "Asphärisches Design laut Beschreibung (geringere Wölbung)." },
+  { id: "kind-ev-p", hersteller: "KIND", name: "KIND Premium", typ: "Einstärken", stufe: "Premium", preis: 299, index: "1,5",
+    verfuegbar: "Nur Fachgeschäft", eigenschaften: ["Alles aus Qualität Plus", "Entspanntes Sehen bei häufigem Wechsel Ferne/Nähe", "Leichteres Fokussieren in der Nähe", "Schärfer in den Randbereichen"],
+    hinweis: "Einstärkenglas mit Nahunterstützung (akkommodationsentlastend)." },
+  { id: "kind-ev-pp", hersteller: "KIND", name: "KIND Premium Plus", typ: "Einstärken", stufe: "Premium Plus", preis: 349, index: "1,5",
+    verfuegbar: "Nur Fachgeschäft", eigenschaften: ["Alles aus Premium", "Individuell nach Sehgewohnheiten und Augenparametern", "Optimierter Tragekomfort", "Noch schärfere Ränder"],
+    hinweis: "Individualglas: Fassungsdaten (HSA, Vorneigung, Fassungsscheibenwinkel) erforderlich." },
+  // Gleitsichtgläser
+  { id: "kind-gl-q", hersteller: "KIND", name: "KIND Qualität", typ: "Gleitsicht", stufe: "Qualität", preis: 199, index: "1,5",
+    verfuegbar: "Online und Fachgeschäft", eigenschaften: ["Breite, klare Sehbereiche mit weichem Übergang", "Leichtes Kunststoffglas", "Entspiegelt, gehärtet, wasserabweisend", "UV-Schutz"],
+    hinweis: "Einstiegs-Gleitsichtglas. Aufpreis Prisma 25 € je Glas." },
+  { id: "kind-gl-qp", hersteller: "KIND", name: "KIND Qualität Plus", typ: "Gleitsicht", stufe: "Qualität Plus", preis: 399, index: "1,5",
+    verfuegbar: "Nur Fachgeschäft", eigenschaften: ["Größere, klarere Sehbereiche", "Weniger Schaukeleffekte bei schnellen Kopf- und Augenbewegungen", "Gute Spontanverträglichkeit", "Leichter Wechsel zwischen den Bereichen", "Ultra-robust, superentspiegelt, antistatisch"],
+    hinweis: "" },
+  { id: "kind-gl-p", hersteller: "KIND", name: "KIND Premium", typ: "Gleitsicht", stufe: "Premium", preis: 599, index: "1,5",
+    verfuegbar: "Nur Fachgeschäft", eigenschaften: ["Alles aus Qualität Plus", "Individualisiert mit den Parametern beider Augen (z. B. unterschiedliche Nahstärken)", "Leichteres Fokussieren in allen Entfernungen", "Schärferes Bild am Glasrand", "Abstimmbar auf Alltag: innen, draußen oder Stadt"],
+    hinweis: "Beim Bestellen die Alltagsvariante (innen / draußen / Stadt) angeben." },
+  { id: "kind-gl-pp", hersteller: "KIND", name: "KIND Premium Plus", typ: "Gleitsicht", stufe: "Premium Plus", preis: 699, index: "1,5",
+    verfuegbar: "Nur Fachgeschäft", eigenschaften: ["Alles aus Premium", "3D-Technologie gegen Randverzerrungen", "Maximale Individualisierung nach Sehgewohnheiten und Augenparametern", "Entspanntes Sehen in allen Bereichen"],
+    hinweis: "Individualglas: vollständige Zentrier- und Fassungsdaten erforderlich." },
+  // Raumkomfort
+  { id: "kind-rk", hersteller: "KIND", name: "KIND Raumkomfort", typ: "Raumkomfort", stufe: "Raumkomfort", preis: 199, index: "1,5",
+    verfuegbar: "Nur Fachgeschäft", eigenschaften: ["Für häufigen Wechsel zwischen Nähe und mittlerer Entfernung", "Lesen, Bildschirm, Gespräche im Nahbereich"],
+    hinweis: "Bildschirmarbeitsplatzbrille: 30 bis 100 cm. KIND empfiehlt die Kombination mit Blaulichtfilter." },
+  { id: "kind-rk-plus", hersteller: "KIND", name: "KIND Raumkomfort Plus", typ: "Raumkomfort", stufe: "Raumkomfort Plus", preis: 399, index: "1,5",
+    verfuegbar: "Nur Fachgeschäft", eigenschaften: ["Wie Raumkomfort mit höherwertigem Design", "Größere Sehbereiche"],
+    hinweis: "" },
+  // Optionen (KIND Komfort)
+  { id: "kind-opt-16", gruppe: "index", hersteller: "KIND", name: "Dünne Gläser (Index 1,6)", typ: "Option", stufe: "KIND Komfort", preis: 85, index: "1,6",
+    verfuegbar: "Online und Fachgeschäft", eigenschaften: ["Materialindex 1,6", "Empfohlen ab ±2,00 dpt"], hinweis: "Aufpreis je Glaspaar." },
+  { id: "kind-opt-167", gruppe: "index", hersteller: "KIND", name: "Extra dünne Gläser (Index 1,67)", typ: "Option", stufe: "KIND Komfort", preis: 120, index: "1,67",
+    verfuegbar: "Online und Fachgeschäft", eigenschaften: ["Materialindex 1,67", "Empfohlen ab ±4,00 dpt", "Für mittlere bis höhere Stärken"], hinweis: "Aufpreis je Glaspaar." },
+  { id: "kind-opt-174", gruppe: "index", hersteller: "KIND", name: "Maximal dünne Gläser (Index 1,74)", typ: "Option", stufe: "KIND Komfort", preis: 195, index: "1,74",
+    verfuegbar: "Nur Fachgeschäft", eigenschaften: ["Materialindex 1,74", "Empfohlen ab ±6,00 dpt", "Maximale Ästhetik und Tragekomfort"], hinweis: "Aufpreis je Glaspaar." },
+  { id: "kind-opt-ar", gruppe: "veredelung", hersteller: "KIND", name: "Premium-Entspiegelung", typ: "Option", stufe: "KIND Komfort", preis: 25, index: "",
+    verfuegbar: "Nur Fachgeschäft", eigenschaften: ["Brillante, extra klare Entspiegelung", "100 % UV-Schutz", "Verbesserter Kontrast", "Antistatisch, staubabweisend", "Besonders kratzfest"], hinweis: "Aufpreis je Glaspaar." },
+  { id: "kind-opt-blau", gruppe: "veredelung", hersteller: "KIND", name: "Blaulichtfilter", typ: "Option", stufe: "KIND Komfort", preis: 50, index: "",
+    verfuegbar: "Online und Fachgeschäft", eigenschaften: ["Filtert Blaulichtanteile digitaler Geräte"], hinweis: "Aufpreis je Glaspaar. Von KIND für Bildschirmarbeitsplatzbrillen empfohlen." },
+  { id: "kind-opt-prisma", gruppe: "zuschlag", hersteller: "KIND", name: "Prismatische Korrektion", typ: "Option", stufe: "Zuschlag", preis: 50, index: "",
+    verfuegbar: "Nur Fachgeschäft", eigenschaften: ["25 € je Glas, 50 € je Paar"], hinweis: "Gilt für Einstärken- und Gleitsichtgläser." },
+  // Tönungen
+  { id: "kind-toen-colour", gruppe: "toenung", hersteller: "KIND", name: "KIND_colour_", typ: "Tönung", stufe: "KIND Tönungen", preis: 40, index: "",
+    verfuegbar: "Online und Fachgeschäft", eigenschaften: ["Modische Tönung", "Laut KIND rund 50 Farbvarianten im Sortiment"], hinweis: "Aufpreis je Glaspaar." },
+  { id: "kind-toen-fashion", gruppe: "toenung", hersteller: "KIND", name: "KIND_fashionColour_", typ: "Tönung", stufe: "KIND Tönungen", preis: 50, index: "",
+    verfuegbar: "Nur Fachgeschäft", eigenschaften: ["Modische Farbtönung, Verlauf oder Vollton"], hinweis: "Aufpreis je Glaspaar." },
+  { id: "kind-toen-mirror", gruppe: "veredelung", hersteller: "KIND", name: "KIND_styleMirror_", typ: "Tönung", stufe: "KIND Tönungen", preis: 50, index: "",
+    verfuegbar: "Online und Fachgeschäft", eigenschaften: ["Verspiegelung"], hinweis: "Aufpreis je Glaspaar." },
+  { id: "kind-toen-polar", gruppe: "toenung", hersteller: "KIND", name: "Polarisierende Gläser", typ: "Tönung", stufe: "KIND Tönungen", preis: 110, index: "",
+    verfuegbar: "Online und Fachgeschäft", eigenschaften: ["Blendet Lichtreflexe aus (Wasser, nasse Straße)"], hinweis: "Aufpreis je Glaspaar." },
+  { id: "kind-toen-photo", gruppe: "toenung", hersteller: "KIND", name: "Selbsttönende Gläser (Phototrop)", typ: "Tönung", stufe: "KIND Tönungen", preis: 110, index: "",
+    verfuegbar: "Online und Fachgeschäft", eigenschaften: ["Passt sich dem Licht an, volle Tönung in 20 bis 30 s", "Hellt im Dunkeln vollständig auf, nachts fahrtauglich", "100 % UV-Schutz", "Hinter der Windschutzscheibe nur schwache Tönung"],
+    hinweis: "Preisseite: 110 € je Paar. Sonnenbrillenseite nennt Phototrop mit 159 € je Paar; im Geschäft prüfen." }
+];
+
+// ---- data-extra.js
+"use strict";
+// Dioptra - Startbestand für Kassenanteil (Brillengläser), Hörakustik (KIND-Hörgeräte, Festbeträge, Batterien).
+
+// Festbeträge Sehhilfen je Glas inkl. MwSt., Bekanntmachung GKV-Spitzenverband zum 1.10.2021.
+// Seit 1.3.2025 gelten bundesweit keine Festbeträge mehr; die Kassen erstatten über Versorgungsverträge in
+// praktisch gleicher Höhe. Beträge daher als Richtwert, bei der Abrechnung die Vertragsliste der Kasse prüfen.
+const FESTBETRAG = {
+  stand: "Bekanntmachung 2021, inkl. MwSt.",
+  gruppen: [
+    { typ: "Einstärken", name: "Einstärkenglas sph bis ±6, cyl bis 2", sphMax: 6, cylMax: 2, betrag: 19.31 },
+    { typ: "Einstärken", name: "Einstärkenglas sph bis ±6, cyl über 2 bis 4", sphMax: 6, cylMax: 4, betrag: 36.22 },
+    { typ: "Einstärken", name: "Einstärkenglas sph über ±6 bis unter 10, cyl bis 4", sphMax: 9.99, cylMax: 4, betrag: 34.68 },
+    { typ: "Einstärken", name: "Einstärkenglas hochbrechend sph 10 bis 12, cyl bis 4", sphMax: 12, cylMax: 4, betrag: 73.26 },
+    { typ: "Einstärken", name: "Einstärkenglas hochbrechend sph über 12 bis 14, cyl bis 4", sphMax: 14, cylMax: 4, betrag: 104.37 },
+    { typ: "Mehrstärken", name: "Mehrstärkenglas Fernteil sph bis ±6, cyl bis 4", sphMax: 6, cylMax: 4, betrag: 96.49 },
+    { typ: "Mehrstärken", name: "Mehrstärkenglas sph über ±6 bis unter 10, cyl bis 4", sphMax: 9.99, cylMax: 4, betrag: 121.00 },
+    { typ: "Mehrstärken", name: "Mehrstärkenglas hochbrechend sph 10 bis 12, cyl bis 4", sphMax: 12, cylMax: 4, betrag: 167.56 },
+    { typ: "Mehrstärken", name: "Mehrstärkenglas hochbrechend sph über 12 bis 14, cyl bis 4", sphMax: 14, cylMax: 4, betrag: 190.17 },
+    { typ: "Lentikular", name: "Einstärken-Lentikularglas", sphMax: 99, cylMax: 8, betrag: 101.34 },
+    { typ: "Bifokal groß", name: "Bifokalglas mit großem oder hoch angesetztem Nahteil, sph unter 10, cyl bis 4", sphMax: 9.99, cylMax: 4, betrag: 112.69 }
+  ],
+  zuschlaege: { cyl6: 29.70, cyl8: 41.84, prisma3: 16.66, prisma6: 41.65, lichtschutz: 11.78, uv400: 54.74 },
+  refraktion: 15.99
+};
+
+// Hörgeräte: Festbetrag der gesetzlichen Kassen je Ohr (Stand 2026, seit 04/2024 unverändert), zweites Ohr mit 20 % Abschlag.
+const HOER_FESTBETRAG = { geraet: 704.37, geraetHochgradig: 734.81, zweitesOhrFaktor: 0.8, zuzahlung: 10, otoplastik: 45.07, schirmchen: 11.61, stand: "GKV-Spitzenverband, Stand 2026" };
+
+// Batterien: Zinc-Air-Größen mit Farbcode und typischer Laufzeit. Preise laut kind.com (6 Stück 6 €, 12 Stück 9,60 €, 36 Stück 18 €).
+const BATTERIEN = [
+  { typ: "10", farbe: "gelb", mm: "5,8 × 3,6", tage: "3 bis 7", tageMittel: 5, geraete: "Kleinste IdO (CIC, IIC), kleine RIC" },
+  { typ: "312", farbe: "braun", mm: "7,9 × 3,6", tage: "3 bis 10", tageMittel: 6, geraete: "RIC, miniRITE, kleine HdO, ITC" },
+  { typ: "13", farbe: "orange", mm: "7,9 × 5,4", tage: "6 bis 14", tageMittel: 10, geraete: "HdO, große IdO" },
+  { typ: "675", farbe: "blau", mm: "11,6 × 5,4", tage: "9 bis 20", tageMittel: 14, geraete: "Power-HdO, Cochlea-Implantat-Prozessoren" }
+];
+const BATTERIE_PREIS = { packung6: 6, packung12: 9.6, packung36: 18, jeZelle: 0.5 };
+
+// KIND-Hörgeräte: Komfortstufen und Modelle laut kind.com, Stand 14.10.2026. Preise = Eigenanteil je Gerät
+// für Versicherte der Ersatzkassen (vdek) mit Verordnung, zuzüglich 10 € gesetzlicher Zuzahlung. Andere Kassen können abweichen.
+const HOER_SEED_VERSION = 1;
+const HOER_SEED = [
+  { id: "kh-stufe-null", hersteller: "KIND", name: "KIND Nulltarif", typ: "Stufe", preis: 0, bauform: "", eigenschaften: ["Hörgeräte mit Bluetooth-Technologie", "Kein Eigenanteil für gesetzlich Versicherte mit Verordnung"], hinweis: "Nur gesetzliche Zuzahlung 10 € je Gerät. Reparaturen über die Reparaturpauschale der Kasse." },
+  { id: "kh-stufe-eco", hersteller: "KIND", name: "KIND Economy", typ: "Stufe", preis: 210, bauform: "", eigenschaften: ["Klares Hören in minimaler Form"], hinweis: "" },
+  { id: "kh-stufe-ecop", hersteller: "KIND", name: "KIND Economy Plus", typ: "Stufe", preis: 435, bauform: "", eigenschaften: ["Gezieltes Hören, mehr Hörkomfort"], hinweis: "ab" },
+  { id: "kh-stufe-q", hersteller: "KIND", name: "KIND Qualität", typ: "Stufe", preis: 785, bauform: "", eigenschaften: ["Leichteres Verstehen in allen Richtungen"], hinweis: "ab" },
+  { id: "kh-stufe-qp", hersteller: "KIND", name: "KIND Qualität Plus", typ: "Stufe", preis: 1085, bauform: "", eigenschaften: ["Deutlicheres Hören, bequeme Bedienung"], hinweis: "ab" },
+  { id: "kh-stufe-p", hersteller: "KIND", name: "KIND Premium", typ: "Stufe", preis: 1610, bauform: "", eigenschaften: ["Ausgewogener Hörgenuss in schwierigen Hörsituationen"], hinweis: "ab" },
+  { id: "kh-stufe-pif", hersteller: "KIND", name: "KIND Premium IF / Premium Plus IF", typ: "Stufe", preis: 2160, bauform: "", eigenschaften: ["Hören ohne Kompromisse", "Modell KINDsevan IF"], hinweis: "ab" },
+  { id: "kh-stufe-pp", hersteller: "KIND", name: "KIND Premium Plus", typ: "Stufe", preis: 2305, bauform: "", eigenschaften: ["Hörgeräte, die verstehen, was Sie hören wollen"], hinweis: "ab" },
+  { id: "kh-duro-1400c", hersteller: "KIND", name: "KINDduro 1400 C", typ: "Modell", preis: 0, bauform: "HdO mit externem Hörer (RIC)", eigenschaften: ["Nulltarif-Modell"], hinweis: "" },
+  { id: "kh-duro-1400", hersteller: "KIND", name: "KINDduro 1400", typ: "Modell", preis: 210, bauform: "HdO mit externem Hörer (RIC)", eigenschaften: ["Economy"], hinweis: "" },
+  { id: "kh-sevan-x1-iic", hersteller: "KIND", name: "KINDsevan x 1 IIC", typ: "Modell", preis: 634.85, bauform: "Mini-IdO (IIC)", eigenschaften: ["Nahezu unsichtbar im Gehörgang"], hinweis: "ab" },
+  { id: "kh-sevan-x2-cic", hersteller: "KIND", name: "KINDsevan x 2 CIC", typ: "Modell", preis: 984.85, bauform: "Mini-IdO (CIC)", eigenschaften: [], hinweis: "ab" },
+  { id: "kh-sevan-x2-itc", hersteller: "KIND", name: "KINDsevan x 2 ITC", typ: "Modell", preis: 984.85, bauform: "IdO (ITC)", eigenschaften: [], hinweis: "ab" },
+  { id: "kh-sevan-3-bte", hersteller: "KIND", name: "KINDsevan 3 miniBTE R", typ: "Modell", preis: 1084.85, bauform: "HdO (miniBTE), Akku", eigenschaften: ["Akku"], hinweis: "ab" },
+  { id: "kh-sevan-3-rite", hersteller: "KIND", name: "KINDsevan 3 miniRITE R", typ: "Modell", preis: 1184.85, bauform: "HdO mit externem Hörer (miniRITE), Akku", eigenschaften: ["Akku"], hinweis: "ab" },
+  { id: "kh-sevan-3-iic", hersteller: "KIND", name: "KINDsevan 3 IIC", typ: "Modell", preis: 1284.85, bauform: "Mini-IdO (IIC)", eigenschaften: [], hinweis: "ab" },
+  { id: "kh-sevan-4-bte", hersteller: "KIND", name: "KINDsevan 4 miniBTE R", typ: "Modell", preis: 1609.85, bauform: "HdO (miniBTE), Akku", eigenschaften: ["Akku"], hinweis: "ab" },
+  { id: "kh-sevan-5-bte", hersteller: "KIND", name: "KINDsevan 5 miniBTE R", typ: "Modell", preis: 2304.85, bauform: "HdO (miniBTE), Akku", eigenschaften: ["Akku"], hinweis: "ab" },
+  { id: "kh-zub-lade", hersteller: "KIND", name: "Ladestation (Lithium-Ionen-Akku)", typ: "Zubehör", preis: 150, bauform: "", eigenschaften: ["150 bis 199 € je nach Ausstattung"], hinweis: "ab" },
+  { id: "kh-zub-mini", hersteller: "KIND", name: "Miniaturisierung", typ: "Zubehör", preis: 150, bauform: "", eigenschaften: ["Aufpreis ca. 150 bis 350 €"], hinweis: "ab" },
+  { id: "kh-zub-vers", hersteller: "KIND", name: "Hörgeräteversicherung", typ: "Zubehör", preis: 8, bauform: "", eigenschaften: ["je Gerät und Jahr, abhängig vom Eigenanteil"], hinweis: "ab" }
+];
+
+// ---- db.js
+"use strict";
+// Dioptra - Datenbanken: Gläser und Hörgeräte als Sammlungen im localStorage, mit Startbestand, Suche,
+// Bearbeiten, JSON-Sicherung und CSV-Einlesen. Neue Startbestandseinträge kommen bei höherer Seed-Version dazu,
+// bearbeitete Einträge bleiben erhalten.
+class Collection {
+  constructor(key, seed, seedVersion, types) { this.key = key; this.seed = seed; this.seedVersion = seedVersion; this.types = types; this.items = []; this.version = 0; }
+  load() {
+    let db = Store.get(this.key, null);
+    if (!db || !Array.isArray(db.items)) db = { version: 0, items: [] };
+    if (db.version < this.seedVersion) {
+      const have = new Set(db.items.map(i => i.id));
+      for (const s of this.seed) if (!have.has(s.id)) db.items.push(Object.assign({}, s));
+      db.version = this.seedVersion; Store.set(this.key, db);
+    }
+    this.items = db.items; this.version = db.version; return this.items;
+  }
+  save() { Store.set(this.key, { version: this.version, items: this.items }); }
+  byId(id) { return this.items.find(i => i.id === id); }
+  // Eintrag mit gleichem Namen (und Hersteller, falls angegeben) finden, Groß- und Kleinschreibung egal.
+  // Gleiche Namen kommen vor (KIND Premium als Einstärken- und Gleitsichtglas), darum zählt der Typ mit, wenn er angegeben ist.
+  byName(name, hersteller, typ) {
+    const low = x => String(x || "").trim().toLowerCase();
+    const n = low(name), h = low(hersteller), t = low(typ);
+    return this.items.find(i => low(i.name) === n && (!h || low(i.hersteller) === h) && (!t || low(i.typ) === t));
+  }
+  // Felder in die erwartete Form bringen: Eigenschaften als Liste, Preis als Zahl, Texte als Text.
+  normalize(raw) {
+    const it = Object.assign({}, raw);
+    if (typeof it.eigenschaften === "string") it.eigenschaften = it.eigenschaften.split(/\||\n/).map(x => x.trim()).filter(Boolean);
+    else if (!Array.isArray(it.eigenschaften)) it.eigenschaften = [];
+    else it.eigenschaften = it.eigenschaften.map(x => String(x));
+    if (typeof it.preis === "string") { const p = parseNum(it.preis.replace(/[€\s]/g, "")); if (!Number.isNaN(p)) it.preis = p; }
+    for (const k of ["name", "hersteller", "typ", "stufe", "index", "bestellnr", "verfuegbar", "lieferbereich", "hinweis", "notizen", "bauform"]) if (it[k] != null && typeof it[k] !== "string") it[k] = String(it[k]);
+    it.id = String(it.id || "");
+    return it;
+  }
+  put(item) { const i = this.items.findIndex(x => x.id === item.id); if (i >= 0) this.items[i] = item; else this.items.push(item); }
+  upsert(item) { this.put(this.normalize(item)); this.save(); }
+  remove(id) { this.items = this.items.filter(i => i.id !== id); this.save(); }
+  resetSeed() { this.items = this.seed.map(s => Object.assign({}, s)); this.version = this.seedVersion; this.save(); }
+  isSeed(item) { return this.seed.some(s => s.id === item.id); }
+  exportJson() { return JSON.stringify({ app: "Dioptra", sammlung: this.key, version: this.version, exported: new Date().toISOString(), items: this.items }, null, 2); }
+  importJson(text) {
+    const o = JSON.parse(text);
+    if (o && typeof o === "object" && !Array.isArray(o) && o.sammlung && o.sammlung !== this.key) throw new Error("Diese Sicherung gehört zu einer anderen Sammlung.");
+    const items = Array.isArray(o) ? o : o.items;
+    if (!Array.isArray(items)) throw new Error("Keine Liste in der Datei.");
+    let n = 0;
+    for (const raw of items) {
+      if (!raw || typeof raw !== "object" || !raw.name) continue;
+      const ex = (raw.id && this.byId(String(raw.id))) || this.byName(raw.name, raw.hersteller, raw.typ);
+      const base = ex || { id: "imp-" + Math.random().toString(36).slice(2, 10), hersteller: "", typ: this.types[this.types.length - 1], eigenschaften: [] };
+      const it = this.normalize(Object.assign({}, base, raw, { id: ex ? ex.id : (raw.id ? String(raw.id) : base.id) }));
+      this.put(it); n++;
+    }
+    this.save();
+    return n;
+  }
+  // CSV mit Kopfzeile. Trenner ; oder , oder Tab. Spalten nach Namen: id, name, hersteller, typ, stufe, preis, index,
+  // bestellnr, verfuegbar, lieferbereich, eigenschaften (mit | getrennt), hinweis, notizen, bauform.
+  importCsv(text) {
+    const lines = text.replace(/^﻿/, "").split(/\r?\n/).filter(l => l.trim());
+    if (lines.length < 2) throw new Error("CSV ohne Datenzeilen.");
+    const sep = [";", "\t", ","].sort((a, b) => lines[0].split(b).length - lines[0].split(a).length)[0];
+    const split = l => { const out = []; let cur = "", q = false; for (const ch of l) { if (ch === '"') q = !q; else if (ch === sep && !q) { out.push(cur); cur = ""; } else cur += ch; } out.push(cur); return out.map(s => s.trim()); };
+    const head = split(lines[0]).map(h => h.toLowerCase().replace(/[^a-zäöü]/g, ""));
+    let n = 0;
+    for (const line of lines.slice(1)) {
+      const cells = split(line); const o = {};
+      head.forEach((h, i) => { if (cells[i] != null && cells[i] !== "") o[h] = cells[i]; });
+      if (!o.name) continue;
+      if (!o.id) { const ex = this.byName(o.name, o.hersteller, o.typ); o.id = ex ? ex.id : "csv-" + Math.random().toString(36).slice(2, 10); }
+      const base = this.byId(o.id) || { hersteller: "", typ: this.types[0], eigenschaften: [] };
+      this.put(this.normalize(Object.assign({}, base, o))); n++;
+    }
+    this.save();
+    return n;
+  }
+}
+const DB = {
+  glaeser: new Collection("dioptra.db.glaeser", KIND_SEED, SEED_VERSION, ["Einstärken", "Gleitsicht", "Raumkomfort", "Option", "Tönung", "Sonstiges"]),
+  hoer: new Collection("dioptra.db.hoer", HOER_SEED, HOER_SEED_VERSION, ["Stufe", "Modell", "Zubehör", "Sonstiges"])
+};
+
+function priceText(i) {
+  if (i.preis == null || i.preis === "") return "";
+  const p = typeof i.preis === "number" ? fmt(i.preis, 2) + " €" : String(i.preis);
+  const pre = (i.typ === "Option" || i.typ === "Tönung") ? "+ " : (i.hinweis === "ab" ? "ab " : "");
+  return pre + p;
+}
+
+// Generische Listenansicht für eine Sammlung. cfg: {col, title, route, sub(item), fields:[...], note, placeholder}
+function collectionView(cfg) {
+  const col = cfg.col;
+  const view = {
+    title: cfg.title,
+    render(main) {
+      col.load();
+      const ui = Store.get(col.key + ".ui", { typ: "", q: "" });
+      const q = el("input.text", { type: "search", placeholder: cfg.placeholder || "Suchen", "aria-label": "Suchen", autocomplete: "off" });
+      q.value = ui.q || "";
+      const addBtn = el("button.btn", { type: "button", text: "Neu", on: { click: () => view.edit(main, null) } });
+      const chips = el("div.chips", { role: "tablist" });
+      const list = el("div.list");
+      function chip(label, val) {
+        const c = el("button.chip", { type: "button", role: "tab", text: label, "aria-selected": String(ui.typ === val),
+          on: { click: () => { ui.typ = val; Store.set(col.key + ".ui", ui); for (const x of chips.children) x.setAttribute("aria-selected", "false"); c.setAttribute("aria-selected", "true"); draw(); } } });
+        return c;
+      }
+      chips.append(chip("Alle", ""), ...col.types.map(t => chip(t, t)));
+      function matches(i, s) {
+        if (ui.typ && i.typ !== ui.typ) return false;
+        if (!s) return true;
+        const hay = [i.name, i.hersteller, i.stufe, i.bestellnr, i.hinweis, i.notizen, i.index, i.bauform, (i.eigenschaften || []).join(" ")].join(" ").toLowerCase();
+        return s.split(/\s+/).every(w => hay.includes(w));
+      }
+      function draw() {
+        const s = q.value.trim().toLowerCase();
+        list.replaceChildren();
+        const items = col.items.filter(i => matches(i, s));
+        if (!items.length) { list.append(el("div.list-empty", { text: "Nichts gefunden." })); return; }
+        for (const i of items) {
+          list.append(el("button.lens", { type: "button", on: { click: () => view.detail(main, i.id) } },
+            el("div.lens-top", el("span.lens-name", { text: i.name }), el("span.lens-price", { text: priceText(i) })),
+            el("span.lens-sub", { text: cfg.sub(i) }),
+            col.isSeed(i) ? null : el("div.pills", el("span.pill.custom", { text: "eigener Eintrag" }))));
+        }
+      }
+      q.addEventListener("input", () => { ui.q = q.value; Store.set(col.key + ".ui", ui); draw(); });
+      main.append(el("div.search", q, addBtn), chips, list, cfg.note ? el("p.note.wide", { text: cfg.note }) : null);
+      draw();
+    },
+    detail(main, id) {
+      const i = col.byId(id);
+      if (!i) { App.show(cfg.route); return; }
+      App.sub(cfg.title, () => App.show(cfg.route), { label: "Bearbeiten", onClick: () => view.edit(main, id) });
+      main.replaceChildren();
+      const dl = el("dl.kv");
+      const kv = (k, v) => { if (v == null || v === "") return; dl.append(el("dt", { text: k }), el("dd", { text: v })); };
+      for (const f of cfg.fields) if (!["name", "eigenschaften", "hinweis", "notizen"].includes(f.name)) kv(f.label, f.name === "preis" ? priceText(i) : i[f.name]);
+      const props = (i.eigenschaften || []).length ? el("ul.plain", ...i.eigenschaften.map(p => el("li", { text: p }))) : null;
+      main.append(...[el("section.card.wide", el("h2", { text: i.name }), dl),
+        props ? section("Eigenschaften", props) : null,
+        i.hinweis && i.hinweis !== "ab" ? section("Hinweis", el("p", { text: i.hinweis })) : null,
+        i.notizen ? section("Eigene Notizen", el("p", { text: i.notizen })) : null].filter(Boolean));
+    },
+    edit(main, id) {
+      const i = id ? Object.assign({}, col.byId(id)) : { id: "own-" + Date.now().toString(36), hersteller: "KIND", typ: col.types[0], eigenschaften: [] };
+      App.sub(id ? "Bearbeiten" : "Neuer Eintrag", () => id ? view.detail(main, id) : App.show(cfg.route));
+      main.replaceChildren();
+      const f = {};
+      function text(name, label, value, area) {
+        const inp = el(area ? "textarea" : "input.text", Object.assign({ id: "ed_" + name, "aria-label": label }, area ? {} : { type: "text" }));
+        inp.value = value == null ? "" : (Array.isArray(value) ? value.join("\n") : value); f[name] = inp;
+        return el("div.field", el("label", { for: "ed_" + name, text: label }), inp);
+      }
+      const typ = el("select", { id: "ed_typ", "aria-label": "Typ" }, ...col.types.map(t => el("option", { value: t, text: t })));
+      typ.value = col.types.includes(i.typ) ? i.typ : col.types[col.types.length - 1];
+      const rows = cfg.fields.map(fd => fd.name === "typ" ? el("div.field", el("label", { for: "ed_typ", text: fd.label }), typ) : text(fd.name, fd.label, i[fd.name], fd.area));
+      const save = el("button.btn", { type: "button", text: "Speichern", on: { click: () => {
+        if (!f.name.value.trim()) { toast("Bitte einen Namen eingeben.", "err"); f.name.focus(); return; }
+        const item = Object.assign({}, i, { typ: typ.value });
+        for (const fd of cfg.fields) {
+          if (fd.name === "typ") continue;
+          const v = f[fd.name].value.trim();
+          if (fd.name === "preis") { const p = parseNum(v.replace(/[€\s]/g, "")); item.preis = v === "" ? "" : (Number.isNaN(p) ? v : p); }
+          else if (fd.area && fd.name === "eigenschaften") item.eigenschaften = v.split("\n").map(s => s.trim()).filter(Boolean);
+          else item[fd.name] = v;
+        }
+        col.upsert(item); toast("Gespeichert."); view.detail(main, item.id);
+      } } });
+      const cancel = el("button.btn.ghost", { type: "button", text: "Abbrechen", on: { click: () => id ? view.detail(main, id) : App.show(cfg.route) } });
+      const del = id ? el("button.btn.ghost.danger", { type: "button", text: "Löschen", on: { click: async () => {
+        if (await confirmDlg("Eintrag löschen?", "„" + i.name + "“ wird entfernt.", "Löschen", true)) { col.remove(id); toast("Gelöscht."); App.show(cfg.route); }
+      } } }) : null;
+      main.append(el("section.card.wide", ...rows), el("div.row.end.wide", ...[del, cancel, save].filter(Boolean)));
+      f.name.focus();
+    }
+  };
+  return view;
+}
+
+// ---- views-rx.js
+"use strict";
+// Dioptra - Rechner zur Brillenglasbestimmung: HSA, Prismen, Transposition, Nahwerte. Ergebnis oben, Eingabe darunter.
+const Views = window.Views || (window.Views = {});
+const RUNDUNG = "Rundungshinweise: junge Kunden eher Richtung Minus, Presbyope eher Richtung Plus (Vorsicht Nebelung bei Fern- und Gleitsichtbrille), hochgradig Presbyope ohne Auto Richtung Plus, Zylinder tendenziell schwächer.";
+function resetRow(g) { return el("div.row.end.wide", el("button.btn.ghost.small", { type: "button", text: "Felder leeren", on: { click: () => g.reset() } })); }
+function emptyBoxes(sub) { return el("div.rx", rxBox("R", null, null, sub), rxBox("L", null, null, sub)); }
+
+// ---- HSA ---------------------------------------------------------------------------------------------
+Views.hsa = {
+  title: "HSA-Rechner", group: "refraktion", sub: "Scheitelabstand umrechnen",
+  render(main) {
+    const out = el("div.results"); let text = "";
+    const g = fieldGroup("dioptra.calc.hsa", [...rxDefs("hsa", "R"), ...rxDefs("hsa", "L"),
+      { name: "hsaOld", label: "bei HSA", unit: "mm", step: 1, decimals: 0, min: 0, max: 30, quick: RX_QUICK.hsa, initial: 12 },
+      { name: "hsaNew", label: "neuer HSA", unit: "mm", step: 1, decimals: 0, min: 0, max: 30, quick: RX_QUICK.hsa }], update);
+    function update(v) {
+      out.replaceChildren(); text = "";
+      if (v.hsaOld == null || v.hsaNew == null) { out.append(emptyBoxes("Abstände eingeben")); return; }
+      const boxes = el("div.rx.big"); const lines = [];
+      for (const eye of ["R", "L"]) {
+        const r = eyeRx(v, eye);
+        if (!r) { boxes.append(rxBox(eye, null, null, "Werte eingeben")); continue; }
+        const h = Calc.hsa(r.sph, r.cyl, r.axis, v.hsaOld, v.hsaNew);
+        const rounded = { sph: Calc.roundTo(h.sph, 0.25), cyl: Calc.roundTo(h.cyl, 0.25), axis: h.axis };
+        boxes.append(rxBox(eye, (eye === "R" ? "Rechts" : "Links") + " bei " + fmt(v.hsaNew, 0) + " mm", rxLines(rounded),
+          "genau " + fmt(h.sph, 3, { sign: true }) + (r.cyl ? " / " + fmt(h.cyl, 3, { sign: true }) : ""),
+          "Hauptschnitte " + fmtDpt(h.m1) + " → " + fmt(h.n1, 3, { sign: true }) + (r.cyl ? ", " + fmtDpt(h.m2) + " → " + fmt(h.n2, 3, { sign: true }) : "")));
+        lines.push(eye + ": " + rxText(r) + " bei " + fmt(v.hsaOld, 0) + " mm → " + rxText(rounded) + " bei " + fmt(v.hsaNew, 0) + " mm (genau " + fmt(h.sph, 3, { sign: true }) + (r.cyl ? " " + fmt(h.cyl, 3, { sign: true }) : "") + ")");
+      }
+      out.append(boxes, note("Gerundet auf 0,25 dpt. " + RUNDUNG));
+      text = lines.join("\n");
+    }
+    main.append(section("Umgerechnete Werte", out).wide(),
+      section("Hornhautscheitelabstand", el("div.grid2", g.node("hsaOld"), g.node("hsaNew")), note("Messbrille meist 12 mm, fertige Brille 10 bis 15 mm. Kontaktlinse = 0 mm.")),
+      section("Werte aus Refraktion oder Brille", rxGrid(g)), resetRow(g));
+    update(g.get());
+    App.copy(() => text);
+  }
+};
+
+// ---- Prismen ----------------------------------------------------------------------------------------
+function taboSvg(r) {
+  const NS = "http://www.w3.org/2000/svg";
+  const svg = document.createElementNS(NS, "svg");
+  svg.setAttribute("viewBox", "0 0 440 236"); svg.setAttribute("class", "tabo"); svg.setAttribute("role", "img"); svg.setAttribute("aria-label", "TABO-Schema mit Prismenrichtungen");
+  function n(tag, attrs) { const e = document.createElementNS(NS, tag); for (const k of Object.keys(attrs)) e.setAttribute(k, attrs[k]); svg.append(e); return e; }
+  const maxP = Math.max(r.in.r.p, r.in.l.p, r.split.r.p, r.split.l.p, 0.01);
+  function lens(cx, cy, label) {
+    n("circle", { cx, cy, r: 78, class: "ring" }); n("line", { x1: cx - 78, y1: cy, x2: cx + 78, y2: cy, class: "axis" }); n("line", { x1: cx, y1: cy - 78, x2: cx, y2: cy + 78, class: "axis" });
+    const t = (x, y, s, anchor) => { const e = n("text", { x, y, "text-anchor": anchor || "middle" }); e.textContent = s; };
+    t(cx + 83, cy + 4, "0°", "start"); t(cx, cy - 84, "90°"); t(cx - 83, cy + 4, "180°", "end"); t(cx, cy + 96, "270°"); t(cx - 55, cy - 62, label);
+  }
+  function arrow(cx, cy, p, base, cls) {
+    if (p < 0.005) return;
+    const len = 18 + 52 * (p / maxP), a = base * Math.PI / 180, x2 = cx + len * Math.cos(a), y2 = cy - len * Math.sin(a);
+    n("line", { x1: cx, y1: cy, x2, y2, class: cls });
+    const hx = Math.cos(a), hy = -Math.sin(a), s = 7;
+    n("polygon", { points: `${x2},${y2} ${x2 - s * hx + s * 0.55 * hy},${y2 - s * hy - s * 0.55 * hx} ${x2 - s * hx - s * 0.55 * hy},${y2 - s * hy + s * 0.55 * hx}`, class: cls });
+  }
+  lens(104, 116, "R"); lens(336, 116, "L");
+  arrow(104, 116, r.in.r.p, r.in.r.base, "arrow-in"); arrow(336, 116, r.in.l.p, r.in.l.base, "arrow-in");
+  arrow(104, 116, r.split.r.p, r.split.r.base, "arrow-split"); arrow(336, 116, r.split.l.p, r.split.l.base, "arrow-split");
+  return svg;
+}
+Views.prismen = {
+  title: "Prismenrechner", group: "refraktion", sub: "Zusammenfassen und verteilen",
+  render(main) {
+    const out = el("div.results"), pic = el("div"); let text = "";
+    const g = fieldGroup("dioptra.calc.prismen", [
+      { name: "rP", label: "Prisma rechts", unit: "cm/m", step: 0.5, min: 0, max: 40 }, { name: "rB", label: "Basis rechts", unit: "°", step: 5, decimals: 0, min: 0, max: 359, quick: RX_QUICK.base },
+      { name: "lP", label: "Prisma links", unit: "cm/m", step: 0.5, min: 0, max: 40 }, { name: "lB", label: "Basis links", unit: "°", step: 5, decimals: 0, min: 0, max: 359, quick: RX_QUICK.base }], update);
+    function comp(eye, c) { return rxBox(eye, null, null, "horizontal " + fmt(Math.abs(c.h), 3) + " " + (c.hDir || ""), "vertikal " + fmt(Math.abs(c.v), 3) + " " + (c.vDir || "")); }
+    function update(v) {
+      out.replaceChildren(); pic.replaceChildren(); text = "";
+      const rP = num(v.rP, 0), rB = num(v.rB, 0), lP = num(v.lP, 0), lB = num(v.lB, 0);
+      if (!rP && !lP) { out.append(note("Prisma und Basislage je Auge aus Messbrille oder Phoropter eingeben. TABO: 0° rechts, 90° oben.")); return; }
+      const r = Calc.prism(rP, rB, lP, lB);
+      out.append(el("div.rx.big",
+        rxBox("R", "Rechts", fmt(r.split.r.p, 2) + " cm/m", "Basis " + fmt(r.split.r.base, 1) + "°"),
+        rxBox("L", "Links", fmt(r.split.l.p, 2) + " cm/m", "Basis " + fmt(r.split.l.base, 1) + "°")),
+        note("Symmetrisch auf beide Augen verteilt."),
+        el("h3", { text: "Gesamt, bezogen auf das rechte Auge" }),
+        resultRow("Resultierendes Prisma", fmt(r.result.p, 3) + " cm/m", "Basis " + fmt(r.result.base, 2) + "°"),
+        resultRow("Horizontal", fmt(Math.abs(r.total.h), 3) + " cm/m", r.total.hDir ? "Basis " + r.total.hDir : ""),
+        resultRow("Vertikal", fmt(Math.abs(r.total.v), 3) + " cm/m", r.total.vDir ? "Basis rechts " + r.total.vDir : ""),
+        el("h3", { text: "Komponenten je Auge" }), el("div.rx", comp("R", r.r), comp("L", r.l)));
+      pic.append(taboSvg({ in: { r: { p: rP, base: rB }, l: { p: lP, base: lB } }, split: r.split }), el("div.legend", el("span.in", el("i"), "Eingabe"), el("span.split", el("i"), "symmetrisch verteilt")));
+      text = `Prismen R ${fmt(rP, 2)} cm/m Basis ${fmt(rB, 0)}°, L ${fmt(lP, 2)} cm/m Basis ${fmt(lB, 0)}°\nGesamt (R-Auge): ${fmt(r.result.p, 3)} cm/m Basis ${fmt(r.result.base, 2)}° (horizontal ${fmt(Math.abs(r.total.h), 3)} ${r.total.hDir}, vertikal ${fmt(Math.abs(r.total.v), 3)} ${r.total.vDir ? "rechts " + r.total.vDir : ""})\nVerteilt: R ${fmt(r.split.r.p, 2)} cm/m Basis ${fmt(r.split.r.base, 1)}°, L ${fmt(r.split.l.p, 2)} cm/m Basis ${fmt(r.split.l.base, 1)}°`;
+    }
+    main.append(section("Ergebnis", out).wide(),
+      section("Daten aus Messbrille / Phoropter", el("div.grid2", g.node("rP"), g.node("rB")), el("div.grid2", g.node("lP"), g.node("lB"))),
+      section("TABO-Schema", pic, note("Blick auf die Kundin: rechtes Auge links im Bild. 0° liegt bei jedem Glas rechts, 90° oben. Vertikale Prismen wirken gegenläufig: Basis oben links entspricht Basis unten rechts.")), resetRow(g));
+    update(g.get());
+    App.copy(() => text);
+  }
+};
+
+// ---- Transposition ----------------------------------------------------------------------------------
+Views.transposition = {
+  title: "Transposition", group: "refraktion", sub: "Plus- und Minuszylinder",
+  render(main) {
+    const out = el("div.results"); let text = "";
+    const g = fieldGroup("dioptra.calc.transposition", [...rxDefs("tr", "R"), ...rxDefs("tr", "L")], update);
+    function update(v) {
+      out.replaceChildren(); const boxes = el("div.rx.big"); const lines = [];
+      for (const eye of ["R", "L"]) {
+        const r = eyeRx(v, eye);
+        if (!r) { boxes.append(rxBox(eye, null, null, "Werte eingeben")); continue; }
+        const t = Calc.transpose(r.sph, r.cyl, r.axis);
+        const form = r.cyl > 0 ? "als Minuszylinder" : (r.cyl < 0 ? "als Pluszylinder" : "sphärisch");
+        boxes.append(rxBox(eye, (eye === "R" ? "Rechts " : "Links ") + form, rxLines(t), "sphärisches Äquivalent " + fmtDpt(Calc.sphEq(r.sph, r.cyl)), "Hauptschnitte " + fmtDpt(r.sph) + " / " + fmtDpt(r.sph + r.cyl)));
+        lines.push(eye + ": " + rxText(r) + " = " + rxText(t) + " (sph. Äq. " + fmtDpt(Calc.sphEq(r.sph, r.cyl)) + ")");
+      }
+      out.append(boxes); text = lines.join("\n");
+    }
+    main.append(section("Andere Zylinderschreibweise", out).wide(), section("Werte", rxGrid(g), note("Sphäre plus Zylinder, Zylinder mit umgekehrtem Vorzeichen, Achse um 90° gedreht.")), resetRow(g));
+    update(g.get()); App.copy(() => text);
+  }
+};
+
+// ---- Nahwerte ----------------------------------------------------------------------------------------
+Views.nah = {
+  title: "Nahwerte", group: "refraktion", sub: "Addition und Zwischenbereich",
+  render(main) {
+    const out = el("div.results"); let text = "";
+    const g = fieldGroup("dioptra.calc.nah", [...rxDefs("nah", "R", { add: true }), ...rxDefs("nah", "L", { add: true }),
+      { name: "factor", label: "Anteil der Addition im Zwischenbereich", step: 0.1, decimals: 2, min: 0, max: 1, initial: 0.5, quick: [0.33, 0.5, 0.66, 0.75] }], update);
+    function update(v) {
+      out.replaceChildren(); const f = num(v.factor, 0.5); const lines = [];
+      for (const eye of ["R", "L"]) {
+        const r = eyeRx(v, eye);
+        if (!r || r.add == null) { out.append(el("div.rx", rxBox(eye, null, null, "Fernwerte und Addition eingeben"))); continue; }
+        const n = Calc.near(r.sph, r.cyl, r.axis, r.add), z = Calc.near(r.sph, r.cyl, r.axis, r.add, f);
+        out.append(el("div.rx.big", rxBox(eye, (eye === "R" ? "Rechts" : "Links") + " Nähe", rxLines(n), "Add " + fmtDpt(r.add)), rxBox(eye, "Zwischenbereich", rxLines(z), "Add × " + fmt(f, 2) + " = " + fmtDpt(r.add * f))));
+        lines.push(eye + ": Ferne " + rxText(r) + ", Add " + fmtDpt(r.add) + " → Nähe " + rxText(n) + ", Zwischen " + rxText(z));
+      }
+      text = lines.join("\n");
+    }
+    main.append(section("Ergebnis", out).wide(), section("Fernwerte und Addition", rxGrid(g)),
+      section("Zwischenbereich", g.node("factor"), note("Für Bildschirm- und Raumkomfortgläser oft die halbe bis zwei Drittel Addition. Der Hersteller gibt die Degression vor.")), resetRow(g));
+    update(g.get()); App.copy(() => text);
+  }
+};
+
+// ---- views-fit.js
+"use strict";
+// Dioptra - Rechner zu Fassung und Glas: Dezentration (Prentice), Mindestdurchmesser, Glasdicke.
+Views.prentice = {
+  title: "Dezentration", group: "fassung", sub: "Prismatische Nebenwirkung",
+  render(main) {
+    const out = el("div.results"); let text = "";
+    const dz = eye => [{ name: eye + "_dx", label: "horizontal (+ innen / − außen)", unit: "mm", step: 0.5, decimals: 1, sign: true, min: -15, max: 15 }, { name: eye + "_dy", label: "vertikal (+ oben / − unten)", unit: "mm", step: 0.5, decimals: 1, sign: true, min: -15, max: 15 }];
+    const g = fieldGroup("dioptra.calc.prentice", [...rxDefs("pz", "R"), ...rxDefs("pz", "L"), ...dz("R"), ...dz("L")], update);
+    function update(v) {
+      out.replaceChildren(); const boxes = el("div.rx.big"); const lines = [];
+      for (const eye of ["R", "L"]) {
+        const r = eyeRx(v, eye); const dx = num(v[eye + "_dx"], 0), dy = num(v[eye + "_dy"], 0);
+        if (!r || (!dx && !dy)) { boxes.append(rxBox(eye, null, null, "Glaswerte und Dezentration eingeben")); continue; }
+        const p = Calc.prentice(eye, r.sph, r.cyl, r.axis, dx, dy);
+        boxes.append(rxBox(eye, null, fmt(p.p, 2) + " cm/m", "Basis " + fmt(p.base, 1) + "°", "horizontal " + fmt(Math.abs(p.h), 2) + " " + (p.hDir || "") + ", vertikal " + fmt(Math.abs(p.v), 2) + " " + (p.vDir || "")));
+        lines.push(eye + ": " + rxText(r) + ", Dezentration " + fmt(dx, 1) + " / " + fmt(dy, 1) + " mm → " + fmt(p.p, 2) + " cm/m Basis " + fmt(p.base, 1) + "°");
+      }
+      out.append(boxes); text = lines.join("\n");
+    }
+    main.append(section("Prismatische Nebenwirkung", out).wide(), section("Glaswerte", rxGrid(g)),
+      section("Verschiebung des optischen Mittelpunkts", el("div.rx", el("div.field-col", eyeTitle("R"), g.node("R_dx"), g.node("R_dy")), el("div.field-col", eyeTitle("L"), g.node("L_dx"), g.node("L_dy"))),
+        note("Plusgläser wirken mit Basis in Richtung der Verschiebung, Minusgläser entgegen. Der Zylinder wird über seine Achse berücksichtigt.")), resetRow(g));
+    update(g.get()); App.copy(() => text);
+  }
+};
+
+Views.durchmesser = {
+  title: "Mindestdurchmesser", group: "fassung", sub: "Passt das Glas in die Fassung?",
+  render(main) {
+    const out = el("div.results"); let text = "";
+    const g = fieldGroup("dioptra.calc.durchmesser", [
+      { name: "a", label: "Scheibenlänge a", unit: "mm", step: 1, decimals: 1, min: 20, max: 80 }, { name: "b", label: "Scheibenhöhe b", unit: "mm", step: 1, decimals: 1, min: 10, max: 70 },
+      { name: "steg", label: "Steg", unit: "mm", step: 1, decimals: 1, min: 8, max: 30, quick: [14, 16, 17, 18, 19, 20] },
+      { name: "ed", label: "gemessene Diagonale (leer: aus a und b)", unit: "mm", step: 1, decimals: 1, min: 20, max: 90 },
+      { name: "pdR", label: "PD rechts", unit: "mm", step: 0.5, decimals: 1, min: 20, max: 45, quick: [30, 31, 32, 33, 34] }, { name: "pdL", label: "PD links", unit: "mm", step: 0.5, decimals: 1, min: 20, max: 45, quick: [30, 31, 32, 33, 34] },
+      { name: "dvR", label: "vertikal rechts (+ oben)", unit: "mm", step: 0.5, decimals: 1, sign: true, min: -15, max: 15 }, { name: "dvL", label: "vertikal links (+ oben)", unit: "mm", step: 0.5, decimals: 1, sign: true, min: -15, max: 15 },
+      { name: "zugabe", label: "Zugabe", unit: "mm", step: 1, decimals: 0, min: 0, max: 6, initial: 2 }], update);
+    function update(v) {
+      out.replaceChildren(); text = "";
+      if ([v.a, v.steg, v.pdR, v.pdL].some(x => x == null)) { out.append(note("Scheibenlänge, Steg und monokulare PD eingeben. Scheibenhöhe oder gemessene Diagonale bestimmt die Glasgröße.")); return; }
+      const r = Calc.minDiameter({ a: v.a, b: num(v.b, 0), ed: num(v.ed, 0), steg: v.steg, pdR: v.pdR, pdL: v.pdL, dvR: num(v.dvR, 0), dvL: num(v.dvL, 0), zugabe: num(v.zugabe, 2) });
+      const boxes = el("div.rx.big"); const lines = [];
+      for (const eye of ["R", "L"]) {
+        const e = r[eye.toLowerCase()];
+        const dez = fmt(Math.abs(e.dez), 1) + " mm " + (e.dez > 0 ? "innen" : (e.dez < 0 ? "außen" : "")) + (e.dezV ? ", vertikal " + fmt(Math.abs(e.dezV), 1) + " mm" : "");
+        boxes.append(rxBox(eye, null, "Ø " + fmt(e.minD, 1) + " mm", "Dezentration " + dez, e.blank ? "Rohglas ab Ø " + e.blank + " mm" : "größer als übliche Rohgläser"));
+        lines.push(eye + ": Mindestdurchmesser " + fmt(e.minD, 1) + " mm (Dezentration " + dez + ", Rohglas " + (e.blank || "–") + ")");
+      }
+      out.append(boxes, resultRow("Verwendete Diagonale", fmt(r.ed, 1) + " mm", v.ed == null ? "aus a und b geschätzt" : "gemessen"), resultRow("Fassungs-PD", fmt(v.a + v.steg, 1) + " mm", "a + Steg"));
+      text = "Fassung " + fmt(v.a, 1) + "/" + fmt(num(v.b, 0), 1) + " Steg " + fmt(v.steg, 1) + ", PD " + fmt(v.pdR, 1) + "/" + fmt(v.pdL, 1) + "\n" + lines.join("\n");
+    }
+    main.append(section("Ergebnis", out).wide(), section("Fassung (Kastenmaß)", el("div.grid3", g.node("a"), g.node("b"), g.node("steg")), g.node("ed")),
+      section("Zentrierung", el("div.grid2", g.node("pdR"), g.node("pdL")), el("div.grid2", g.node("dvR"), g.node("dvL")), g.node("zugabe"), note("Mindestdurchmesser = Diagonale + 2 × Dezentration + Zugabe. Die Box-Diagonale aus a und b überschätzt die Scheibe meist etwas.")), resetRow(g));
+    update(g.get()); App.copy(() => text);
+  }
+};
+
+Views.dicke = {
+  title: "Glasdicke", group: "fassung", sub: "Brechzahlen im Vergleich",
+  render(main) {
+    const out = el("div"); let text = "";
+    const INDICES = [{ n: 1.5, name: "1,5 Standard", from: 0 }, { n: 1.6, name: "1,6 dünn", from: 2 }, { n: 1.67, name: "1,67 extra dünn", from: 4 }, { n: 1.74, name: "1,74 maximal dünn", from: 6 }];
+    const g = fieldGroup("dioptra.calc.dicke", [
+      { name: "sph", label: "Sphäre", unit: "dpt", step: 0.25, sign: true, min: -30, max: 30 }, { name: "cyl", label: "Zylinder", unit: "dpt", step: 0.25, sign: true, min: -10, max: 10 },
+      { name: "d", label: "Durchmesser", unit: "mm", step: 5, decimals: 0, min: 40, max: 85, initial: 65, quick: [55, 60, 65, 70, 75] }, { name: "tmin", label: "Mindestdicke", unit: "mm", step: 0.1, decimals: 1, min: 0.5, max: 3, initial: 1, quick: [0.8, 1, 1.2, 1.5] }], update);
+    function update(v) {
+      out.replaceChildren(); text = "";
+      if (v.sph == null) { out.append(note("Sphäre eingeben. Bei Zylinder zählt der stärkere Hauptschnitt.")); return; }
+      const F = Calc.worstMeridian(v.sph, num(v.cyl, 0)), d = num(v.d, 65), tmin = num(v.tmin, 1);
+      const base = Calc.thickness(F, 1.5, d, tmin), baseMax = Math.max(base.center, base.edge);
+      let rec = INDICES[0]; for (const i of INDICES) if (Math.abs(F) >= i.from) rec = i;
+      const tb = el("tbody"); const lines = [];
+      for (const i of INDICES) {
+        const t = Calc.thickness(F, i.n, d, tmin), mx = Math.max(t.center, t.edge);
+        tb.append(el("tr" + (i === rec ? ".mark" : ""), el("td", { text: i.name + (i === rec ? " ●" : "") }), el("td", { text: fmt(t.center, 1) + " mm" }), el("td", { text: fmt(t.edge, 1) + " mm" }), el("td", { text: i.n === 1.5 ? "–" : "−" + fmt((1 - mx / baseMax) * 100, 0) + " %" })));
+        lines.push(i.name + ": Mitte " + fmt(t.center, 1) + " mm, Rand " + fmt(t.edge, 1) + " mm");
+      }
+      out.append(el("div.table-wrap", el("table", el("thead", el("tr", el("th", { text: "Index" }), el("th", { text: "Mitte" }), el("th", { text: "Rand" }), el("th", { text: "dünner" }))), tb)),
+        note("● Empfehlung nach KIND-Staffel: 1,6 ab ±2,00, 1,67 ab ±4,00, 1,74 ab ±6,00 dpt. Berechnet für " + fmtDpt(F) + " im stärksten Hauptschnitt, Ø " + fmt(d, 0) + " mm, Basiskurve nach Vogel. Näherung für das Beratungsgespräch."));
+      text = "Glasdicke für " + fmtDpt(F) + ", Ø " + fmt(d, 0) + " mm:\n" + lines.join("\n");
+    }
+    main.append(section("Vergleich der Brechzahlen", out).wide(), section("Glas", el("div.grid2", g.node("sph"), g.node("cyl")), el("div.grid2", g.node("d"), g.node("tmin")), note("Mindestdicke: Mitte bei Minusgläsern, Rand bei Plusgläsern.")), resetRow(g));
+    update(g.get()); App.copy(() => text);
+  }
+};
+
+// ---- views-extra.js
+"use strict";
+// Dioptra - Weitere Rechner: Visus, Tönung, Kassenanteil für Brillengläser.
+Views.visus = {
+  title: "Visus", group: "refraktion", sub: "Dezimal, Snellen, LogMAR",
+  render(main) {
+    const out = el("div.results"); let text = "";
+    const g = fieldGroup("dioptra.calc.visus", [
+      { name: "dec", label: "Visus dezimal", step: 0.1, decimals: 2, min: 0.01, max: 2.5, quick: [0.1, 0.3, 0.5, 0.8, 1, 1.25] },
+      { name: "logmar", label: "LogMAR", step: 0.1, decimals: 2, sign: true, min: -0.4, max: 2, quick: [0, 0.1, 0.3, 0.5, 1] }], update);
+    let lock = false;
+    function update(v, src) {
+      if (lock) return; lock = true;
+      let r = null;
+      // Das zuletzt geänderte Feld führt; wird es geleert, wird auch das andere geleert.
+      if (src === "logmar") { if (v.logmar != null) { r = Calc.visus(Calc.visusFromLogmar(v.logmar)); if (r) g.fields.dec.set(Calc.roundTo(r.dec, 0.01)); } else g.fields.dec.set(null); }
+      else if (v.dec != null) { r = Calc.visus(v.dec); if (r) g.fields.logmar.set(Calc.roundTo(r.logmar, 0.01)); }
+      else g.fields.logmar.set(null);
+      lock = false;
+      out.replaceChildren(); text = "";
+      if (!r) { out.append(note(v.dec != null && v.dec <= 0 ? "Visus muss größer als 0 sein." : "Dezimalvisus oder LogMAR eingeben.")); return; }
+      out.append(resultRow("Dezimal", fmt(r.dec, 2)), resultRow("Snellen (m)", "6/" + fmt(r.snellen6, 1)), resultRow("Snellen (ft)", "20/" + fmt(r.snellen20, 0)), resultRow("LogMAR", fmt(r.logmar, 2, { sign: true })));
+      text = "Visus " + fmt(r.dec, 2) + " = 6/" + fmt(r.snellen6, 1) + " = 20/" + fmt(r.snellen20, 0) + ", LogMAR " + fmt(r.logmar, 2, { sign: true });
+    }
+    g.fields.dec.o.onChange = () => { g.save(); update(g.get(), "dec"); };
+    g.fields.logmar.o.onChange = () => { g.save(); update(g.get(), "logmar"); };
+    const tb = el("tbody");
+    for (const d of [0.05, 0.1, 0.2, 0.3, 0.4, 0.5, 0.63, 0.8, 1.0, 1.25, 1.6, 2.0]) { const r = Calc.visus(d); tb.append(el("tr", el("td", { text: fmt(d, 2) }), el("td", { text: "6/" + fmt(r.snellen6, 1) }), el("td", { text: "20/" + fmt(r.snellen20, 0) }), el("td", { text: fmt(r.logmar, 2, { sign: true }) }))); }
+    main.append(section("Umrechnung", out).wide(), section("Eingabe", el("div.grid2", g.node("dec"), g.node("logmar")), note("Fahrerlaubnis: beidäugig mindestens 0,7 (Gruppe 1) nach FeV Anlage 6. Erwerbsminderung und Blindheit haben eigene Grenzen.")),
+      section("Tabelle", el("div.table-wrap", el("table", el("thead", el("tr", el("th", { text: "Dezimal" }), el("th", { text: "6/x" }), el("th", { text: "20/x" }), el("th", { text: "LogMAR" }))), tb))));
+    update(g.get(), "dec"); App.copy(() => text);
+  }
+};
+
+Views.toenung = {
+  title: "Tönung", group: "fassung", sub: "Filterkategorien 0 bis 4",
+  render(main) {
+    const out = el("div.results"); let text = "";
+    const g = fieldGroup("dioptra.calc.toenung", [{ name: "t", label: "Lichttransmission", unit: "%", step: 5, decimals: 0, min: 0, max: 100, quick: [85, 75, 50, 25, 15, 8] }], update);
+    function update(v) {
+      out.replaceChildren(); text = "";
+      const c = Calc.tintCategory(v.t);
+      if (!c) { out.append(note("Transmission in Prozent eingeben (Tönung 75 % = Transmission 25 %).")); return; }
+      out.append(el("div.rx-box.big", el("span", { text: "Kategorie" }), el("span.rx-val", { text: String(c.cat) }), el("span.rx-sub", { text: c.use })),
+        resultRow("Absorption (Tönungsgrad)", fmt(100 - v.t, 0) + " %"), resultRow("Straßenverkehr tags", c.cat <= 3 ? "geeignet" : "nicht geeignet"), resultRow("Straßenverkehr nachts", v.t >= 75 ? "geeignet" : "nicht geeignet (unter 75 %)"));
+      text = "Transmission " + fmt(v.t, 0) + " % = Tönung " + fmt(100 - v.t, 0) + " %, Filterkategorie " + c.cat + " (" + c.use + ")";
+    }
+    const tb = el("tbody");
+    for (const c of Calc.TINT_CATS) tb.append(el("tr", el("td", { text: String(c.cat) }), el("td", { text: fmt(c.min, 0) + " bis " + fmt(c.max, 0) + " %" }), el("td", { text: c.use })));
+    main.append(section("Ergebnis", out).wide(), section("Eingabe", g.node("t")),
+      section("Kategorien nach EN ISO 12312-1", el("div.table-wrap", el("table", el("thead", el("tr", el("th", { text: "Kat." }), el("th", { text: "Transmission" }), el("th", { text: "Einsatz" }))), tb))));
+    update(g.get()); App.copy(() => text);
+  }
+};
+
+Views.kasse = {
+  title: "Kassenanteil Gläser", group: "preis", sub: "Festbetrag und Zuzahlung",
+  render(main) {
+    const out = el("div.results"); let text = "";
+    const st = Store.get("dioptra.calc.kasse.opts", { typ: "Einstärken", unter18: true, lichtschutz: false, uv400: false });
+    const g = fieldGroup("dioptra.calc.kasse", [
+      { name: "R_sph", label: "Sphäre rechts", unit: "dpt", step: 0.25, sign: true, min: -30, max: 30 }, { name: "R_cyl", label: "Zylinder rechts", unit: "dpt", step: 0.25, sign: true, min: -10, max: 10 },
+      { name: "L_sph", label: "Sphäre links", unit: "dpt", step: 0.25, sign: true, min: -30, max: 30 }, { name: "L_cyl", label: "Zylinder links", unit: "dpt", step: 0.25, sign: true, min: -10, max: 10 },
+      { name: "prisma", label: "Prisma je Glas", unit: "cm/m", step: 0.5, min: 0, max: 10 }], update);
+    const saveOpts = () => { Store.set("dioptra.calc.kasse.opts", st); update(g.get()); };
+    function update(v) {
+      out.replaceChildren(); text = "";
+      if (v.R_sph == null && v.L_sph == null) { out.append(note("Glaswerte eingeben. Erwachsene haben nur bei schwerer Sehbeeinträchtigung Anspruch (Visus beidseits höchstens 0,3 oder über ±6 dpt bzw. cyl über 4 dpt).")); return; }
+      let sum = 0, zuz = 0; const lines = [];
+      for (const eye of ["R", "L"]) {
+        if (v[eye + "_sph"] == null) continue;
+        const r = Calc.festbetragGlas(FESTBETRAG, { typ: st.typ, sph: v[eye + "_sph"], cyl: num(v[eye + "_cyl"], 0), prisma: num(v.prisma, 0), lichtschutz: st.lichtschutz, uv400: st.uv400 });
+        const z = Calc.zuzahlung(r.sum, st.unter18);
+        out.append(el("h3", { text: eye === "R" ? "Rechtes Glas" : "Linkes Glas" }));
+        if (!r.ok) { out.append(note(r.hinweis)); lines.push(eye + ": " + r.hinweis); continue; }
+        for (const p of r.parts) out.append(resultRow(p.name, fmtEur(p.betrag)));
+        out.append(resultRow("Kasse je Glas", fmtEur(r.sum), z ? "Zuzahlung " + fmtEur(z) : "keine Zuzahlung"));
+        sum += r.sum; zuz += z; lines.push(eye + ": Kasse " + fmtEur(r.sum) + (z ? ", Zuzahlung " + fmtEur(z) : ""));
+      }
+      out.append(el("div.sum-total", el("span", { text: "Kasse für beide Gläser" }), el("span", { text: fmtEur(sum) })),
+        resultRow("Gesetzliche Zuzahlung gesamt", fmtEur(zuz), st.unter18 ? "unter 18 keine" : "10 %, 5 bis 10 € je Glas"),
+        resultRow("Refraktionsbestimmung", fmtEur(FESTBETRAG.refraktion), "einmal je Verordnung"),
+        note("Richtwerte nach der Festbetragsbekanntmachung 2021 (inkl. MwSt.). Seit 1.3.2025 gelten bundesweit keine Festbeträge mehr; die Kassen erstatten über Versorgungsverträge in praktisch gleicher Höhe. Für die Abrechnung die Vertragsliste der Kasse prüfen."));
+      text = "Kassenanteil " + st.typ + (st.unter18 ? " (unter 18)" : "") + ":\n" + lines.join("\n") + "\nGesamt Kasse " + fmtEur(sum) + ", Zuzahlung " + fmtEur(zuz);
+    }
+    main.append(section("Kassenanteil", out).wide(),
+      section("Glasart", segmented([["Einstärken", "Einstärken"], ["Mehrstärken", "Mehrstärken"], ["Bifokal groß", "Bifokal groß"], ["Lentikular", "Lentikular"]], st.typ, v => { st.typ = v; saveOpts(); }, "Glasart"),
+        toggleRow("Versicherte Person unter 18", st.unter18, v => { st.unter18 = v; saveOpts(); }, "Ohne gesetzliche Zuzahlung"),
+        toggleRow("Lichtschutzglas", st.lichtschutz, v => { st.lichtschutz = v; saveOpts(); }), toggleRow("UV-Kantenfilter 400 nm", st.uv400, v => { st.uv400 = v; saveOpts(); })),
+      section("Glaswerte", el("div.rx", el("div.field-col", eyeTitle("R"), g.node("R_sph"), g.node("R_cyl")), el("div.field-col", eyeTitle("L"), g.node("L_sph"), g.node("L_cyl"))), g.node("prisma")), resetRow(g));
+    update(g.get()); App.copy(() => text);
+  }
+};
+
+// ---- views-preis.js
+"use strict";
+// Dioptra - Preisrechner: Grundglas, Optionen aus der Gläserdatenbank, Fassung, freie Positionen, Rabatt. Nichts wird
+// über den aktuellen Entwurf hinaus gespeichert, keine Kundendaten.
+Views.preis = {
+  title: "Preisrechner", group: "preis", sub: "Brille mit Ausstattung kalkulieren",
+  render(main) {
+    DB.glaeser.load();
+    const st = Object.assign({ typ: "Gleitsicht", glas: null, optionen: [], posten: [] }, Store.get("dioptra.preis", {}));
+    for (const k of Object.keys(st)) if (!["typ", "glas", "optionen", "posten"].includes(k)) delete st[k];
+    const save = () => { Store.set("dioptra.preis", st); update(); };
+    const out = el("div.results"); let text = "";
+    const typen = ["Einstärken", "Gleitsicht", "Raumkomfort"];
+    const glasList = el("div"), optList = el("div"), postenList = el("div");
+    const items = () => DB.glaeser.items;
+    const basis = () => items().filter(i => i.typ === st.typ);
+    const optionen = () => items().filter(i => (i.typ === "Option" || i.typ === "Tönung") && i.id !== "kind-opt-prisma");
+    const price = i => typeof i.preis === "number" ? i.preis : 0;
+    // Grundglas immer aus dem aktuellen Typ; fehlt die gespeicherte Wahl, das erste Glas des Typs, sonst keins.
+    const currentGlas = () => { const list = basis(); return list.find(i => i.id === st.glas) || list[0] || null; };
+
+    function drawGlas() {
+      glasList.replaceChildren();
+      const list = basis(), cur = currentGlas();
+      if (!list.length) { glasList.append(note("Keine Gläser dieses Typs in der Datenbank.")); return; }
+      for (const i of list) glasList.append(el("button.opt", { type: "button", "aria-pressed": String(cur && cur.id === i.id), on: { click: () => { st.glas = i.id; save(); drawGlas(); } } },
+        el("span.opt-box"), el("span.opt-text", el("span", { text: i.name }), el("span.opt-sub", { text: i.verfuegbar || "" })), el("span.opt-price", { text: fmtEur(price(i)) })));
+    }
+    function drawOpts() {
+      optList.replaceChildren();
+      for (const i of optionen()) {
+        const on = st.optionen.includes(i.id);
+        const blocked = !on && i.gruppe && (i.gruppe === "index" || i.gruppe === "toenung") && st.optionen.some(id => { const o = DB.glaeser.byId(id); return o && o.gruppe === i.gruppe; });
+        optList.append(el("button.opt", { type: "button", "aria-pressed": String(on), disabled: blocked ? "true" : null, on: { click: () => {
+          st.optionen = on ? st.optionen.filter(x => x !== i.id) : st.optionen.concat(i.id); save(); drawOpts();
+        } } }, el("span.opt-box"), el("span.opt-text", el("span", { text: i.name }), el("span.opt-sub", { text: (i.gruppe === "index" ? "Nur eine Glasstärke" : (i.gruppe === "toenung" ? "Nur eine Tönung" : (i.typ))) })), el("span.opt-price", { text: "+ " + fmtEur(price(i)) })));
+      }
+    }
+    function drawPosten() {
+      postenList.replaceChildren();
+      st.posten.forEach((p, idx) => {
+        const name = el("input.text", { type: "text", placeholder: "Bezeichnung", "aria-label": "Bezeichnung" }); name.value = p.name || "";
+        const betrag = el("input.text", { type: "text", inputmode: "decimal", placeholder: "€", "aria-label": "Betrag" }); betrag.value = p.betrag == null ? "" : fmt(p.betrag, 2);
+        name.addEventListener("input", () => { p.name = name.value; save(); });
+        betrag.addEventListener("change", () => { const v = parseNum(betrag.value); p.betrag = Number.isNaN(v) ? null : v; betrag.value = p.betrag == null ? "" : fmt(p.betrag, 2); save(); });
+        postenList.append(el("div.pos-row", name, betrag, el("button.icon-btn", { type: "button", "aria-label": "Position entfernen", text: "✕", on: { click: () => { st.posten.splice(idx, 1); save(); drawPosten(); } } })));
+      });
+    }
+    const g = fieldGroup("dioptra.preis.felder", [
+      { name: "prisma", label: "Gläser mit Prisma", unit: "Stück", step: 1, decimals: 0, min: 0, max: 2, initial: 0, quick: [0, 1, 2] },
+      { name: "fassung", label: "Fassung", unit: "€", step: 10, decimals: 2, min: 0, max: 5000, quick: [0, 99, 149, 199, 249] },
+      { name: "rabattProzent", label: "Rabatt", unit: "%", step: 5, decimals: 0, min: 0, max: 100, quick: [0, 10, 15, 20, 25] },
+      { name: "rabattEuro", label: "Rabatt", unit: "€", step: 10, decimals: 2, min: 0, max: 5000 }], () => update());
+
+    function calc() {
+      const v = g.get(); const rows = []; let sum = 0;
+      const glas = currentGlas();
+      if (glas) { rows.push([glas.name + " (" + glas.typ + ", Paar)", price(glas)]); sum += price(glas); }
+      for (const id of st.optionen) { const o = DB.glaeser.byId(id); if (o) { rows.push([o.name, price(o)]); sum += price(o); } }
+      const pr = DB.glaeser.byId("kind-opt-prisma"); const n = num(v.prisma, 0);
+      if (pr && n > 0) { const je = price(pr) / 2; rows.push(["Prisma, " + n + " Glas" + (n > 1 ? "er" : ""), je * n]); sum += je * n; }
+      if (v.fassung != null && v.fassung > 0) { rows.push(["Fassung", v.fassung]); sum += v.fassung; }
+      for (const p of st.posten) if (p.betrag != null) { rows.push([p.name || "Position", p.betrag]); sum += p.betrag; }
+      let rabatt = 0;
+      if (v.rabattProzent) rabatt += sum * v.rabattProzent / 100;
+      if (v.rabattEuro) rabatt += v.rabattEuro;
+      rabatt = Math.min(rabatt, sum);
+      return { rows, sum, rabatt, total: sum - rabatt, v };
+    }
+    function update() {
+      const c = calc(); out.replaceChildren();
+      for (const [name, betrag] of c.rows) out.append(resultRow(name, fmtEur(betrag)));
+      if (c.rabatt) out.append(resultRow("Rabatt", "− " + fmtEur(c.rabatt)));
+      out.append(el("div.sum-total", el("span", { text: "Gesamt" }), el("span", { text: fmtEur(c.total) })), note("Preise je Glaspaar laut Datenbank, inkl. MwSt. Ohne Gewähr."));
+      text = "Kalkulation Brille\n" + c.rows.map(([n, b]) => n + ": " + fmtEur(b)).join("\n") + (c.rabatt ? "\nRabatt: −" + fmtEur(c.rabatt) : "") + "\nGesamt: " + fmtEur(c.total);
+    }
+    main.append(section("Kalkulation", out).wide(),
+      section("Grundglas", segmented(typen.map(t => [t, t]), st.typ, v => { st.typ = v; save(); drawGlas(); }, "Glastyp"), glasList),
+      section("Ausstattung", optList, g.node("prisma")),
+      section("Fassung und weitere Positionen", g.node("fassung"), postenList, el("button.btn.ghost.small", { type: "button", text: "+ Position", on: { click: () => { st.posten.push({ name: "", betrag: null }); save(); drawPosten(); postenList.lastChild.querySelector("input").focus(); } } })),
+      section("Rabatt", el("div.grid2", g.node("rabattProzent"), g.node("rabattEuro"))),
+      el("div.row.end.wide", el("button.btn.ghost.small", { type: "button", text: "Neue Kalkulation", on: { click: () => { st.optionen = []; st.posten = []; st.glas = null; save(); g.reset(); drawGlas(); drawOpts(); drawPosten(); } } })));
+    drawGlas(); drawOpts(); drawPosten(); update();
+    App.copy(() => text);
+  }
+};
+
+// ---- views-hoer.js
+"use strict";
+// Dioptra - Hörakustik: Eigenanteil, Batterien, Hörgeräte-Datenbank. Einschaltbar unter Mehr.
+Views.hoerEigenanteil = {
+  title: "Eigenanteil Hörgeräte", group: "hoer", sub: "Kasse, Zuzahlung, Gesamt",
+  render(main) {
+    const out = el("div.results"); let text = "";
+    const st = Object.assign({ ohren: 2, preisIstEigenanteil: true, hochgradig: false, otoplastik: "oto" }, Store.get("dioptra.hoer.opts", {}));
+    const saveOpts = () => { Store.set("dioptra.hoer.opts", st); update(g.get()); };
+    const g = fieldGroup("dioptra.hoer.eigen", [
+      { name: "preis", label: "Preis je Gerät", unit: "€", step: 50, decimals: 2, min: 0, max: 10000, quick: [0, 210, 435, 785, 1085, 1610, 2305] },
+      { name: "festbetrag", label: "Festbetrag Kasse je Ohr", unit: "€", step: 10, decimals: 2, min: 0, max: 2000, initial: HOER_FESTBETRAG.geraet, quick: [{ v: HOER_FESTBETRAG.geraet, label: "Standard" }, { v: HOER_FESTBETRAG.geraetHochgradig, label: "hochgradig" }] },
+      { name: "ladestation", label: "Ladestation", unit: "€", step: 10, decimals: 2, min: 0, max: 1000, quick: [0, 150, 199] },
+      { name: "sonstiges", label: "Sonstiges (Versicherung, Zubehör)", unit: "€", step: 10, decimals: 2, min: 0, max: 5000 }], update);
+    function update(v) {
+      out.replaceChildren(); text = "";
+      if (v.preis == null) { out.append(note("Preis je Gerät eingeben. Bei KIND-Preisen ist das bereits der Eigenanteil nach Kassenzuschuss.")); return; }
+      const oto = st.otoplastik === "oto" ? HOER_FESTBETRAG.otoplastik : (st.otoplastik === "schirm" ? HOER_FESTBETRAG.schirmchen : 0);
+      const r = Calc.hoerEigenanteil({ preis: v.preis, preisIstEigenanteil: st.preisIstEigenanteil, ohren: st.ohren, festbetrag: num(v.festbetrag, HOER_FESTBETRAG.geraet), zweitesOhrFaktor: HOER_FESTBETRAG.zweitesOhrFaktor, zuzahlung: HOER_FESTBETRAG.zuzahlung, otoplastik: oto, ladestation: num(v.ladestation, 0), sonstiges: num(v.sonstiges, 0) });
+      out.append(el("div.sum-total", el("span", { text: "Zu zahlen" }), el("span", { text: fmtEur(r.zuZahlen) })),
+        resultRow("Eigenanteil Geräte", fmtEur(r.geraeteEigen), r.n + " Gerät" + (r.n > 1 ? "e" : "")),
+        resultRow("Gesetzliche Zuzahlung", fmtEur(r.zuzahlung), "10 € je Gerät"),
+        r.extras ? resultRow("Ladestation, Sonstiges", fmtEur(r.extras)) : null,
+        el("h3", { text: "Kasse" }),
+        resultRow("Festbetrag Geräte", fmtEur(r.kasseGeraete), r.n === 2 ? "zweites Ohr −20 %" : ""),
+        oto ? resultRow("Ohrpassstücke", fmtEur(r.kasseOto), r.n + " Stück") : null,
+        resultRow("Gesamtwert Geräte", fmtEur(r.geraeteGesamt), "Kasse plus Eigenanteil"),
+        note("Festbeträge: " + HOER_FESTBETRAG.stand + ". Kassen können abweichen, bei KIND gelten die Preise für Ersatzkassen (vdek). Anspruch nur mit HNO-Verordnung."));
+      text = "Hörgeräte " + (r.n === 2 ? "beidseitig" : "einseitig") + ": Eigenanteil " + fmtEur(r.geraeteEigen) + ", Zuzahlung " + fmtEur(r.zuzahlung) + (r.extras ? ", Zubehör " + fmtEur(r.extras) : "") + ", zu zahlen " + fmtEur(r.zuZahlen) + " (Kasse " + fmtEur(r.kasseGeraete + r.kasseOto) + ")";
+    }
+    main.append(section("Ergebnis", out).wide(),
+      section("Versorgung", segmented([[1, "Ein Ohr"], [2, "Beide Ohren"]], st.ohren, v => { st.ohren = Number(v); saveOpts(); }, "Ohren"),
+        toggleRow("Preis ist bereits Eigenanteil", st.preisIstEigenanteil, v => { st.preisIstEigenanteil = v; saveOpts(); }, "So stehen die Preise in der KIND-Liste. Aus: Preis ist der Gesamtpreis vor Kassenanteil."),
+        segmented([["oto", "Otoplastik"], ["schirm", "Schirmchen"], ["keine", "Ohne"]], st.otoplastik, v => { st.otoplastik = v; saveOpts(); }, "Ohrpassstück"), g.node("preis"), g.node("festbetrag")),
+      section("Zubehör", el("div.grid2", g.node("ladestation"), g.node("sonstiges"))), resetRow(g));
+    update(g.get()); App.copy(() => text);
+  }
+};
+
+Views.batterien = {
+  title: "Batterien", group: "hoer", sub: "Größen, Laufzeit, Jahresbedarf",
+  render(main) {
+    const out = el("div.results"); let text = "";
+    const st = Object.assign({ typ: "312" }, Store.get("dioptra.hoer.batt", {}));
+    const g = fieldGroup("dioptra.hoer.battf", [
+      { name: "tage", label: "Laufzeit je Zelle", unit: "Tage", step: 1, decimals: 0, min: 1, max: 30, initial: 6 },
+      { name: "geraete", label: "Geräte", unit: "Stück", step: 1, decimals: 0, min: 1, max: 2, initial: 2, quick: [1, 2] },
+      { name: "preis", label: "Preis je Zelle", unit: "€", step: 0.1, decimals: 2, min: 0, max: 5, initial: BATTERIE_PREIS.jeZelle, quick: [{ v: 1, label: "6er 6 €" }, { v: 0.8, label: "12er 9,60 €" }, { v: 0.5, label: "36er 18 €" }] }], update);
+    function update(v) {
+      out.replaceChildren();
+      const r = Calc.batterieJahr(num(v.tage, 6), num(v.geraete, 2), num(v.preis, 0.5));
+      out.append(el("div.sum-total", el("span", { text: "Je Jahr" }), el("span", { text: fmtEur(r.kosten) })), resultRow("Zellen je Jahr", String(r.zellen)), resultRow("Packungen à 36", String(Math.ceil(r.zellen / 36))), resultRow("Je Monat", fmtEur(r.kosten / 12)));
+      text = "Batterien: " + r.zellen + " Zellen je Jahr, " + fmtEur(r.kosten) + " je Jahr";
+    }
+    const tb = el("tbody");
+    for (const b of BATTERIEN) tb.append(el("tr" + (st.typ === b.typ ? ".mark" : ""), { on: { click: () => { st.typ = b.typ; Store.set("dioptra.hoer.batt", st); g.fields.tage.set(b.tageMittel); for (const r of tb.children) r.classList.toggle("mark", r === tb.children[BATTERIEN.indexOf(b)]); } } },
+      el("td", { text: b.typ + " (" + b.farbe + ")" }), el("td", { text: b.mm + " mm" }), el("td", { text: b.tage }), el("td", { text: b.geraete })));
+    main.append(section("Jahresbedarf", out).wide(), section("Rechnung", el("div.grid3", g.node("tage"), g.node("geraete"), g.node("preis")), note("Zeile in der Tabelle antippen übernimmt die mittlere Laufzeit. KIND-Preise: 6 Stück 6 €, 12 Stück 9,60 €, 36 Stück 18 €.")),
+      section("Zink-Luft-Größen", el("div.table-wrap", el("table", el("thead", el("tr", el("th", { text: "Typ" }), el("th", { text: "Maß" }), el("th", { text: "Tage" }), el("th", { text: "Geräte" }))), tb))).wide());
+    update(g.get()); App.copy(() => text);
+  }
+};
+
+Views.hoergeraete = collectionView({ col: DB.hoer, title: "Hörgeräte", route: "hoergeraete", placeholder: "Suchen: Modell, Stufe, Bauform",
+  sub: i => [i.hersteller, i.typ, i.bauform, i.bestellnr ? "Nr. " + i.bestellnr : ""].filter(Boolean).join(" · "),
+  fields: [{ name: "name", label: "Name" }, { name: "hersteller", label: "Hersteller" }, { name: "typ", label: "Typ" }, { name: "bauform", label: "Bauform" }, { name: "preis", label: "Eigenanteil je Gerät (€)" }, { name: "bestellnr", label: "Bestellnummer" }, { name: "eigenschaften", label: "Eigenschaften (eine je Zeile)", area: true }, { name: "hinweis", label: "Hinweis" }, { name: "notizen", label: "Eigene Notizen", area: true }],
+  note: "Eigenanteile je Gerät laut kind.com für Ersatzkassen-Versicherte, Stand Oktober 2026, zuzüglich 10 € Zuzahlung. Ohne Gewähr." });
+Views.hoergeraete.group = "hoer"; Views.hoergeraete.sub = "KIND-Stufen und Modelle";
+
+// ---- app.js
+"use strict";
+// Dioptra - Rahmen: Startseite mit Kacheln, Reiter, Navigation ohne Browser-Historie (Wischgeste tut nichts),
+// Kopfzeile mit Zurück und Kopieren, Ansicht „Mehr", Service Worker.
+const APP_VERSION = "0.1.3";
+const GROUPS = [
+  { id: "refraktion", title: "Refraktion" }, { id: "fassung", title: "Fassung und Glas" }, { id: "preis", title: "Preise und Kasse" }, { id: "hoer", title: "Hörakustik", optional: true }
+];
+const ICONS = {
+  hsa: '<path d="M4 12h16M4 8v8M20 8v8"/><circle cx="12" cy="12" r="3"/>', prismen: '<path d="M12 4l8 16H4z"/>', transposition: '<path d="M7 7h10l-3-3M17 17H7l3 3"/>',
+  nah: '<circle cx="12" cy="12" r="8"/><path d="M8 14c2-2 6-2 8 0"/>', visus: '<path d="M4 20h4V9H4zM10 20h4V4h-4zM16 20h4v-7h-4z"/>',
+  prentice: '<circle cx="12" cy="12" r="8"/><circle cx="14" cy="11" r="1.5"/><path d="M12 4v4M4 12h4"/>', durchmesser: '<circle cx="12" cy="12" r="8"/><path d="M4 12h16"/>',
+  dicke: '<path d="M8 4c-3 4-3 12 0 16M16 4c3 4 3 12 0 16"/>', toenung: '<circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 1 0 16z" fill="currentColor"/>',
+  preis: '<path d="M16 5H10a3.5 3.5 0 0 0 0 7h4a3.5 3.5 0 0 1 0 7H7M12 3v18"/>', kasse: '<rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 10h18"/>',
+  hoerEigenanteil: '<path d="M6 10a6 6 0 0 1 12 0c0 4-4 4-4 8a2 2 0 0 1-4 0"/>', batterien: '<rect x="4" y="8" width="14" height="8" rx="2"/><path d="M18 11h2v2h-2M7 12h8"/>',
+  hoergeraete: '<path d="M8 20c-3-3-3-8 0-11a5 5 0 0 1 9 2c0 3-3 4-3 7a2 2 0 0 1-4 0"/>'
+};
+const TILE_ORDER = ["hsa", "prismen", "transposition", "nah", "visus", "prentice", "durchmesser", "dicke", "toenung", "preis", "kasse", "hoerEigenanteil", "batterien", "hoergeraete"];
+const Settings = {
+  get() { return Object.assign({ hoer: true }, Store.get("dioptra.settings", {})); },
+  set(o) { Store.set("dioptra.settings", Object.assign(this.get(), o)); }
+};
+function tileIcon(id) {
+  const s = el("span"); s.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">' + (ICONS[id] || "") + "</svg>";
+  return s.firstChild;
+}
+
+Views.start = {
+  title: "Dioptra",
+  render(main) {
+    const s = Settings.get();
+    for (const grp of GROUPS) {
+      if (grp.optional && !s.hoer) continue;
+      const tiles = el("div.tiles");
+      for (const id of TILE_ORDER) {
+        const v = Views[id]; if (!v || v.group !== grp.id) continue;
+        tiles.append(el("button.tile", { type: "button", on: { click: () => App.show(id) } }, tileIcon(id), el("span", el("span.tile-name", { text: v.title }), el("br"), el("span.tile-sub", { text: v.sub || "" }))));
+      }
+      main.append(el("div.group-title.wide", el("h3", { text: grp.title })), tiles);
+    }
+  }
+};
+
+Views.glaeser = collectionView({ col: DB.glaeser, title: "Gläser", route: "glaeser", placeholder: "Suchen: Name, Bestellnummer, Eigenschaft",
+  sub: i => [i.hersteller, i.typ, i.index ? "Index " + i.index : "", i.bestellnr ? "Nr. " + i.bestellnr : ""].filter(Boolean).join(" · "),
+  fields: [{ name: "name", label: "Name" }, { name: "hersteller", label: "Hersteller" }, { name: "typ", label: "Glastyp" }, { name: "stufe", label: "Stufe / Linie" }, { name: "preis", label: "Preis je Paar (€)" }, { name: "index", label: "Index" }, { name: "bestellnr", label: "Bestellnummer" }, { name: "verfuegbar", label: "Verfügbar" }, { name: "lieferbereich", label: "Lieferbereich" }, { name: "eigenschaften", label: "Eigenschaften (eine je Zeile)", area: true }, { name: "hinweis", label: "Hinweis" }, { name: "notizen", label: "Eigene Notizen", area: true }],
+  note: "Preise je Glaspaar laut kind.com, Stand Oktober 2026, ohne Gewähr. Bestellnummern sind nicht öffentlich: im Eintrag unter „Bearbeiten“ nachtragen." });
+
+Views.mehr = {
+  title: "Mehr",
+  render(main) {
+    const s = Settings.get();
+    const cur = (() => { try { return localStorage.getItem("theme") || "system"; } catch (e) { return "system"; } })();
+    const theme = segmented([["system", "System"], ["dark", "Dunkel"], ["light", "Hell"]], cur, v => {
+      try { localStorage.setItem("theme", v); } catch (e) { /* egal */ }
+      if (v === "system") document.documentElement.removeAttribute("data-theme"); else document.documentElement.setAttribute("data-theme", v);
+    }, "Farbschema");
+    function backupCard(title, col, fileBase) {
+      col.load();
+      const file = el("input", { type: "file", accept: ".json,.csv,text/csv,application/json", class: "skip" });
+      const exp = el("button.btn.ghost", { type: "button", text: "Sichern (JSON)", on: { click: () => { downloadText(fileBase + "-" + new Date().toISOString().slice(0, 10) + ".json", col.exportJson()); toast("Sicherung erstellt."); } } });
+      const imp = el("button.btn.ghost", { type: "button", text: "Einlesen (JSON oder CSV)", on: { click: () => file.click() } });
+      file.addEventListener("change", async () => {
+        const f = file.files && file.files[0]; if (!f) return;
+        try {
+          const text = await f.text();
+          const ok = await confirmDlg("Einlesen", "Einträge mit gleicher Kennung oder gleichem Namen werden ersetzt, alle anderen bleiben. Fortfahren?", "Einlesen");
+          if (!ok) return;
+          const n = /\.csv$/i.test(f.name) ? col.importCsv(text) : col.importJson(text);
+          toast(n + " Einträge eingelesen.");
+        } catch (e) { toast("Datei nicht lesbar: " + e.message, "err"); }
+        file.value = "";
+      });
+      const count = el("p.note", { text: col.items.length + " Einträge, nur auf diesem Gerät." });
+      const refresh = () => { count.textContent = col.items.length + " Einträge, nur auf diesem Gerät."; };
+      file.addEventListener("change", () => setTimeout(refresh, 400));
+      const reset = el("button.btn.ghost.danger", { type: "button", text: "Auf Startbestand zurücksetzen", on: { click: async () => {
+        if (await confirmDlg("Zurücksetzen?", "Eigene Einträge, Bestellnummern und Notizen gehen verloren. Vorher sichern.", "Zurücksetzen", true)) { col.resetSeed(); refresh(); toast("Startbestand wiederhergestellt."); }
+      } } });
+      return section(title, count, el("div.row", exp, imp, file), reset);
+    }
+    const clearCalc = el("button.btn.ghost", { type: "button", text: "Alle Rechnerfelder leeren", on: { click: () => { for (const k of Store.keys("dioptra.calc.")) Store.remove(k); for (const k of Store.keys("dioptra.hoer.")) Store.remove(k); Store.remove("dioptra.preis"); Store.remove("dioptra.preis.felder"); toast("Rechnerfelder geleert."); } } });
+    main.append(
+      section("Farbschema", theme),
+      section("Bereiche", toggleRow("Hörakustik", s.hoer, v => { Settings.set({ hoer: v }); toast(v ? "Hörakustik eingeschaltet." : "Hörakustik ausgeblendet."); }, "Eigenanteil, Batterien, Hörgeräte auf der Startseite")),
+      backupCard("Gläserdatenbank", DB.glaeser, "dioptra-glaeser"), backupCard("Hörgeräte", DB.hoer, "dioptra-hoergeraete"),
+      section("Rechner", clearCalc),
+      section("CSV-Einlesen", note("Kopfzeile mit Spaltennamen: name, hersteller, typ, stufe, preis, index, bestellnr, verfuegbar, lieferbereich, eigenschaften (mit | getrennt), hinweis, notizen, bauform. Trenner Semikolon, Komma oder Tab. Gleicher Name aktualisiert den Eintrag; bei Namen, die es mehrfach gibt (KIND Premium), die Spalte typ mitgeben.")),
+      section("Installation auf dem iPhone", el("ul.plain", el("li", { text: "https://ghost-o7.github.io/dioptra/ in Safari öffnen, Teilen, „Zum Home-Bildschirm“. Danach läuft die App ohne Netz." }), el("li", { text: "Alles bleibt auf dem Gerät. Keine Konten, keine Server, keine Kundendaten." }), el("li", { text: "Sicherungen landen als Datei in „Dateien“." }))),
+      section("Unterstützen", note("Dioptra ist Freeware und bleibt kostenlos. Wer die Arbeit daran unterstützen möchte, kann das freiwillig über Ko-fi tun."),
+        el("a.btn.ghost.kofi", { href: "https://ko-fi.com/ghost_o7", target: "_blank", rel: "noopener", text: "☕ Auf Ko-fi unterstützen" }), note("ko-fi.com/ghost_o7")),
+      section("Über", el("dl.kv", el("dt", { text: "Version" }), el("dd", { text: APP_VERSION }),
+        el("dt", { text: "Projekt" }), el("dd", { text: "github.com/ghost-o7/dioptra, Freeware. Unabhängiges Werkzeug, keine Verbindung zu KIND oder Konradin; Produktnamen nur zur Beschreibung des Sortiments." }), el("dt", { text: "Rechner" }), el("dd", { text: "HSA und Prismen nach den Rechnern von DER AUGENOPTIKER (Konradin), gegen deren Referenzwerte geprüft. Übrige Rechner nach Lehrbuch." }),
+        el("dt", { text: "Daten" }), el("dd", { text: "KIND-Sortiment nach kind.com (Oktober 2026), Festbeträge Sehhilfen nach Bekanntmachung 2021, Hörgeräte-Festbetrag GKV 2026." }), el("dt", { text: "Hinweis" }), el("dd", { text: "Alle Angaben ohne Gewähr. Bestellwerte und Abrechnung hängen vom Einzelfall ab." }))));
+  }
+};
+
+const App = {
+  main: null, title: null, back: null, action: null, tabs: null, current: null, copyFn: null, subBack: null,
+  tabOf(view) { if (view === "glaeser") return "glaeser"; if (view === "preis") return "preis"; if (view === "mehr") return "mehr"; return "start"; },
+  show(view, opts) {
+    if (!Object.hasOwn(Views, view)) view = "start";
+    Keypad.close(); Keypad.fields = [];
+    this.current = view; this.copyFn = null; this.subBack = null;
+    Store.set("dioptra.lastView", view);
+    const tab = this.tabOf(view);
+    for (const b of this.tabs.querySelectorAll(".tab")) b.setAttribute("aria-selected", String(b.dataset.tab === tab));
+    this.title.textContent = Views[view].title;
+    this.back.classList.toggle("placeholder", tab !== "start" || view === "start");
+    this.action.classList.add("placeholder"); this.action.textContent = ""; this.action.append(this.copyIcon.cloneNode(true)); this.action.setAttribute("aria-label", "Kopieren");
+    this.main.replaceChildren();
+    const wrap = el("div.view"); this.main.append(wrap);
+    Views[view].render(wrap);
+    this.main.scrollTop = 0;
+  },
+  // Unteransicht (Detail, Bearbeiten): eigener Titel, Zurück-Ziel, optionaler Aktionsknopf mit Text.
+  sub(title, back, action) {
+    Keypad.close(); Keypad.fields = [];
+    this.title.textContent = title; this.subBack = back; this.back.classList.remove("placeholder");
+    this.action.textContent = ""; this.copyFn = null;
+    if (action) { this.action.textContent = action.label; this.action.setAttribute("aria-label", action.label); this.action.classList.remove("placeholder"); this.action.onclick = action.onClick; }
+    else this.action.classList.add("placeholder");
+    this.main.scrollTop = 0;
+  },
+  copy(fn) { this.copyFn = fn; this.action.classList.remove("placeholder"); this.action.onclick = () => { const t = fn(); if (t) copyText(t, "Ergebnis kopiert."); else toast("Noch kein Ergebnis.", "err"); }; },
+  goBack() { if (this.subBack) { const b = this.subBack; this.subBack = null; b(); } else this.show("start"); },
+  boot() {
+    this.main = $("main"); this.title = $("title"); this.back = $("back"); this.action = $("action"); this.tabs = $("tabs");
+    this.copyIcon = this.action.firstElementChild.cloneNode(true);
+    Keypad.mount();
+    this.back.addEventListener("click", () => this.goBack());
+    for (const b of this.tabs.querySelectorAll(".tab")) b.addEventListener("click", () => this.show(b.dataset.tab));
+    // Hash nur beim Start auswerten (Deep-Link), danach keine Historie mehr anfassen.
+    const h = (location.hash || "").replace(/^#/, "");
+    if (h) history.replaceState(null, "", location.pathname + location.search);
+    const last = Store.get("dioptra.lastView", "start");
+    this.show(Object.hasOwn(Views, h) ? h : (Object.hasOwn(Views, last) ? last : "start"));
+    this.sw();
+  },
+  sw() {
+    if (!("serviceWorker" in navigator) || !/^https?:$/.test(location.protocol)) return;
+    const hadController = !!navigator.serviceWorker.controller; let reloaded = false;
+    navigator.serviceWorker.addEventListener("controllerchange", () => { if (reloaded || !hadController) return; reloaded = true; toast("Aktualisiert. Neue Version wird geladen."); setTimeout(() => location.reload(), 900); });
+    navigator.serviceWorker.register("sw.js").catch(() => { /* ohne Offline-Cache weiter */ });
+  }
+};
+document.addEventListener("DOMContentLoaded", () => App.boot());
+
+  </script>
+</body>
+</html>

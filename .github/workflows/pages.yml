@@ -1,0 +1,39 @@
+# Veroeffentlicht den Ordner app/ als GitHub Pages: https://ghost-o7.github.io/dioptra/
+# Laeuft bei jedem Push auf main, nachdem die Render-Pruefung bestanden ist. Beim ersten Lauf schaltet
+# configure-pages die Pages-Funktion ein; schlaegt das fehl, in den Repo-Einstellungen unter
+# Pages die Quelle "GitHub Actions" waehlen und den Workflow erneut starten.
+name: Pages
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: pages
+  cancel-in-progress: true
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Render-Prüfung vor der Veroeffentlichung
+        run: npm install --no-save --silent jsdom@25.0.1 && node tools/check-refs.js
+      - name: Build-Kennung in den Service Worker schreiben
+        run: sed -i 's/const BUILD = "dev";/const BUILD = "${{ github.sha }}";/' app/sw.js && grep -c 'const BUILD = "${{ github.sha }}"' app/sw.js
+      - uses: actions/configure-pages@v5
+        with:
+          enablement: true
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: app
+      - id: deployment
+        uses: actions/deploy-pages@v4

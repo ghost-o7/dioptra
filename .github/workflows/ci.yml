@@ -1,0 +1,21 @@
+# Pruefung bei jedem Push: alle Ansichten zeichnen, Einzeldatei bauen.
+name: CI
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Render-Prüfung aller Ansichten (jsdom)
+        run: npm install --no-save --silent jsdom@25.0.1 && node tools/check-refs.js
+      - name: Einzeldatei bauen
+        run: node tools/build-single.js
